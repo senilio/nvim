@@ -101,4 +101,8 @@ packer.startup(function(use)
 		event = "BufReadPre",
 		config = get_config("bufferline"),
 	})
+    use({
+        'numToStr/Comment.nvim',
+        config = get_config("comment"),
+    })
 end)
