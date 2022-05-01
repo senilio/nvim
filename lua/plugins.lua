@@ -32,6 +32,20 @@ packer.startup(function(use)
 	-- actual plugins list
 	use("wbthomason/packer.nvim")
 	use({
+		"nvim-telescope/telescope.nvim",
+		requires = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } },
+		config = get_config("telescope"),
+	})
+	use({ "jvgrootveld/telescope-zoxide" })
+	use({ "crispgm/telescope-heading.nvim" })
+	use({ "nvim-telescope/telescope-symbols.nvim" })
+	use({ "nvim-telescope/telescope-file-browser.nvim" })
+	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+	use({
+		"kevinhwang91/nvim-bqf",
+		requires = { { "junegunn/fzf", module = "nvim-bqf" } },
+	})
+	use({
 		"nvim-lualine/lualine.nvim",
 		config = get_config("lualine"),
 		event = "VimEnter",
@@ -101,8 +115,8 @@ packer.startup(function(use)
 		event = "BufReadPre",
 		config = get_config("bufferline"),
 	})
-    use({
-        'numToStr/Comment.nvim',
-        config = get_config("comment"),
-    })
+	use({
+		"numToStr/Comment.nvim",
+		config = get_config("comment"),
+	})
 end)

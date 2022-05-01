@@ -92,7 +92,7 @@ wk.register({
 
 -- Register all leader based mappings
 wk.register({
-	["<Tab>"] = { "<cmd>e#<cr>", "Switch to previously opened buffer" },
+	["<Tab>"] = { "<cmd>BufferLineCycleNext<cr>", "Cycle to next buffer" },
 	["<leader>"] = {
 		name = "Leader",
 		a = { "<cmd>lua print('fasfAS')<cr>", "test" },
@@ -232,7 +232,7 @@ wk.register({
 			"<cmd>lua require'telegraph'.telegraph({cmd='gitui', how='tmux_popup'})<cr>",
 			"Test Telegraph",
 		},
-		l = { "<cmd>ource ~/.config/nvim/snippets/*<cr>", "Reload snippets" },
+		l = { "<cmd>source ~/.config/nvim/snippets/*<cr>", "Reload snippets" },
 		p = { "<cmd>PackerSync<cr>", "PackerSync" },
 		t = { "<cmd>FloatermNew --autoclose=2<cr>", "New Floaterm" },
 		s = { "<cmd>SymbolsOutline<cr>", "Toggle SymbolsOutline" },
@@ -256,15 +256,6 @@ wk.register({
 			"Colorscheme with Preview",
 		},
 	},
-	t = {
-		name = "Trouble",
-		w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
-		d = { "<cmd>Trouble document_diagnostics<cr>", "Document Diagnostic" },
-		l = { "<cmd>Trouble loclist<cr>", "Loclist" },
-		q = { "<cmd>Trouble quickfix<cr>", "Quickfix" },
-		t = { "<cmd>TodoTrouble<cr>", "Todos" },
-		r = { "<cmd>Trouble lsp_references<cr>", "LSP References" },
-	},
 	w = {
 		name = "Window",
 		p = { "<c-w>x", "Swap" },
@@ -277,40 +268,5 @@ wk.register({
 			"<cmd>lua require('nvim-window').pick()<cr>",
 			"Choose window to jump",
 		},
-	},
-	x = {
-		name = "LanguageTool",
-		c = { "<cmd>GrammarousCheck<cr>", "Grammar check" },
-		i = { "<Plug>(grammarous-open-info-window)", "Open the info window" },
-		r = { "<Plug>(grammarous-reset)", "Reset the current check" },
-		f = { "<Plug>(grammarous-fixit)", "Fix the error under the cursor" },
-		x = {
-			"<Plug>(grammarous-close-info-window)",
-			"Close the information window",
-		},
-		e = {
-			"<Plug>(grammarous-remove-error)",
-			"Remove the error under the cursor",
-		},
-		n = {
-			"<Plug>(grammarous-move-to-next-error)",
-			"Move cursor to the next error",
-		},
-		p = {
-			"<Plug>(grammarous-move-to-previous-error)",
-			"Move cursor to the previous error",
-		},
-		d = {
-			"<Plug>(grammarous-disable-rule)",
-			"Disable the grammar rule under the cursor",
-		},
-	},
-	z = {
-		name = "Spelling",
-		n = { "]s", "Next" },
-		p = { "[s", "Previous" },
-		a = { "zg", "Add word" },
-		f = { "1z=", "Use 1. correction" },
-		l = { "<cmd>Telescope spell_suggest<cr>", "List corrections" },
 	},
 }, { prefix = "<leader>", mode = "n", default_options })
