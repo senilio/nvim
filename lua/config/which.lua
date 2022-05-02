@@ -92,7 +92,9 @@ wk.register({
 
 -- Register all leader based mappings
 wk.register({
-	["<Tab>"] = { "<cmd>BufferLineCycleNext<cr>", "Cycle to next buffer" },
+	["<Tab>"] = { "<cmd>BufferLineCycleNext<cr>", "Cycle buffers" },
+	["<Right>"] = { "<cmd>BufferLineCycleNext<cr>", "Cycle buffer right" },
+	["<Left>"] = { "<cmd>BufferLineCyclePrev<cr>", "Cycle buffer left" },
 	["<leader>"] = {
 		name = "Leader",
 	},
@@ -117,11 +119,11 @@ wk.register({
 		},
 		x = {
 			"<cmd>BufferLineSortByDirectory<cr>",
-			"Sort BufferLines automatically by directory",
+			"Sort BufferLines by directory",
 		},
 		L = {
 			"<cmd>BufferLineSortByExtension<cr>",
-			"Sort BufferLines automatically by extension",
+			"Sort BufferLines by extension",
 		},
 	},
 	f = {
