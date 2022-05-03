@@ -95,9 +95,9 @@ wk.register({
 	["<Tab>"] = { "<cmd>BufferLineCycleNext<cr>", "Cycle buffers" },
 	["<Right>"] = { "<cmd>BufferLineCycleNext<cr>", "Cycle buffer right" },
 	["<Left>"] = { "<cmd>BufferLineCyclePrev<cr>", "Cycle buffer left" },
-	["<leader>"] = {
-		name = "Leader",
-	},
+	-- ["<leader>"] = {
+	-- 	name = "Leader",
+	-- },
 	b = {
 		name = "Buffers",
 		b = {
