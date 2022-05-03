@@ -142,6 +142,7 @@ wk.register({
 	},
 	g = {
 		name = "Git",
+		b = { "<cmd>GitBlameToggle<cr>", "Toogle Blame" },
 		j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
 		k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
 		p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
@@ -155,8 +156,6 @@ wk.register({
 			"Undo Stage Hunk",
 		},
 		g = { "<cmd>Telescope git_status<cr>", "Open changed file" },
-		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-		B = { "<cmd>GitBlameToggle<cr>", "Toogle Blame" },
 		c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
 		C = {
 			"<cmd>Telescope git_bcommits<cr>",

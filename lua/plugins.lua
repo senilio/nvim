@@ -137,4 +137,5 @@ packer.startup(function(use)
 		"numToStr/Comment.nvim",
 		config = get_config("comment"),
 	})
+	use({ "f-person/git-blame.nvim", config = get_config("git-blame") })
 end)
