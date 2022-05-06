@@ -27,7 +27,7 @@ local servers = {
 	"bashls",
 	"pyright",
 	"dockerls",
-	"terraformls",
+	--terraformls",
 	"sumneko_lua",
 	"tsserver",
 	"texlab",

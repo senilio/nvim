@@ -28,7 +28,7 @@ require("go").setup({
 	-- set to true: use gopls to format
 	-- false if you want to use other formatter tool(e.g. efm, nulls)
 	gopls_cmd = nil, -- if you need to specify gopls path and cmd, e.g {"/home/user/lsp/gopls", "-logfile","/var/log/gopls.log" }
-	gopls_remote_auto = true, -- add -remote=auto to gopls
+	gopls_remote_auto = false, -- add -remote=auto to gopls
 	dap_debug = false, -- set to false to disable dap
 	dap_debug_keymap = false, -- true: use keymap for debugger defined in go/dap.lua
 	-- false: do not use keymap in go/dap.lua.  you must define your own.

@@ -46,13 +46,10 @@ require("nvim-tree").setup({
 	hijack_cursor = true,
 	-- updates the root directory of the tree on `DirChanged` (when your run `:cd` usually)
 	update_cwd = true,
-	-- this option hides files and folders starting with a dot `.`
-	--	hide_dotfiles = true,
-	-- show lsp diagnostics in the signcolumn
-	--	diagnostics = {
-	--		enabled = true,
-	--		icon = { hint = "", info = "", warning = "", error = "" },
-	--	},
+    filters = {
+		-- this option hides files and folders starting with a dot `.`
+		dotfiles = false,
+	},
 	git = { ignore = true },
 	-- update the focused file on `BufEnter`, un-collapses the folders recursively until it finds the file
 	update_focused_file = {

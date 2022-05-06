@@ -93,8 +93,14 @@ wk.register({
 -- Register all leader based mappings
 wk.register({
 	["<Tab>"] = { "<cmd>BufferLineCycleNext<cr>", "Cycle buffers" },
-	["<Right>"] = { "<cmd>BufferLineCycleNext<cr>", "Cycle buffer right" },
-	["<Left>"] = { "<cmd>BufferLineCyclePrev<cr>", "Cycle buffer left" },
+	["<Right>"] = "which_key_ignore",
+	["<Left>"] = "which_key_ignore",
+	["1"] = "which_key_ignore",
+	["2"] = "which_key_ignore",
+	["3"] = "which_key_ignore",
+	["4"] = "which_key_ignore",
+	["5"] = "which_key_ignore",
+	["6"] = "which_key_ignore",
 	-- ["<leader>"] = {
 	-- 	name = "Leader",
 	-- },
