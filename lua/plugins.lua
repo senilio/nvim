@@ -138,4 +138,5 @@ packer.startup(function(use)
 		config = get_config("comment"),
 	})
 	use({ "f-person/git-blame.nvim", config = get_config("git-blame") })
+	use({ "cuducos/yaml.nvim", ft = { "yaml" } })
 end)
