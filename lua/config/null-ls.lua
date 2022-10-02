@@ -11,7 +11,7 @@ nls.setup({
 		nls.builtins.formatting.black,
 	},
 	on_attach = function(client)
-		if client.resolved_capabilities.document_formatting then
+		if client.server_capabilities.documentFormattingProvider then
 			-- auto format on save (not asynchronous)
 			local LspFormattingGrp = vim.api.nvim_create_augroup("LspFormattingGrp", { clear = true })
 			vim.api.nvim_create_autocmd("BufWritePre", {
