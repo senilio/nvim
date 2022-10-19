@@ -21,6 +21,7 @@ cmp.setup({
 		}),
 	},
 	experimental = { native_menu = false, ghost_text = false },
+	completion = { autocomplete = false },
 	snippet = {
 		expand = function(args)
 			require("luasnip").lsp_expand(args.body)
