@@ -28,7 +28,7 @@ local servers = {
 	"pyright",
 	"dockerls",
 	--terraformls",
-	"sumneko_lua",
+	"lua_ls",
 	"tsserver",
 	"texlab",
 	"yamlls",
