@@ -243,6 +243,7 @@ wk.register({
 		t = { "<cmd>FloatermNew --autoclose=2<cr>", "New Floaterm" },
 		s = { "<cmd>SymbolsOutline<cr>", "Toggle SymbolsOutline" },
 		z = { "<cmd>ZenMode<cr>", "Toggle ZenMode" },
+		f = { "<cmd>set eventignore=BufWritePre<cr>", "Disable Auto Format" },
 	},
 	s = {
 		name = "Search",
