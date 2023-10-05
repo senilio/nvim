@@ -60,3 +60,12 @@ o.wildignore = [[
 *.swp,.lock,.DS_Store,._*
 */tmp/*,*.so,*.swp,*.zip,**/node_modules/**,**/target/**,**.terraform/**"
 ]]
+vim.cmd("colorscheme ghdark")
+vim.cmd("highlight Normal guibg=#000000")
+vim.cmd("highlight EndOfBuffer ctermbg=NONE guibg=NONE")
+vim.cmd("highlight IndentBlanklineChar cterm=nocombine ctermfg=0 gui=nocombine guifg=#333333")
+vim.cmd("highlight IndentBlanklineSpaceChar cterm=nocombine ctermfg=0 gui=nocombine guifg=bg")
+vim.cmd("highlight IndentBlanklineContextStart cterm=underline gui=underline guisp=#77bdfb")
+vim.cmd("highlight IndentBlanklineSpaceCharBlankline cterm=nocombine ctermfg=0 gui=nocombine guifg=bg")
+vim.cmd("highlight IndentBlanklineContextChar cterm=nocombine ctermfg=75 gui=nocombine guifg=#666666")
+vim.g.gitblame_enabled = 0
