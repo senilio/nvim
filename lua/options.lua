@@ -68,4 +68,5 @@ vim.cmd("highlight IndentBlanklineSpaceChar cterm=nocombine ctermfg=0 gui=nocomb
 vim.cmd("highlight IndentBlanklineContextStart cterm=underline gui=underline guisp=#77bdfb")
 vim.cmd("highlight IndentBlanklineSpaceCharBlankline cterm=nocombine ctermfg=0 gui=nocombine guifg=bg")
 vim.cmd("highlight IndentBlanklineContextChar cterm=nocombine ctermfg=75 gui=nocombine guifg=#666666")
+vim.cmd("highlight GitSignsCurrentLineBlame cterm=nocombine ctermfg=75 gui=nocombine guifg=#0ffcc1")
 vim.g.gitblame_enabled = 0

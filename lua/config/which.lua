@@ -145,7 +145,7 @@ wk.register({
 	},
 	g = {
 		name = "Git",
-		b = { "<cmd>GitBlameToggle<cr>", "Toogle Blame" },
+		b = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Toogle Blame" },
 		j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
 		k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
 		p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },

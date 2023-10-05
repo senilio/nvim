@@ -31,16 +31,14 @@ require("lazy").setup({
 	"nvim-telescope/telescope-file-browser.nvim",
 	"vv9k/vim-github-dark",
 	{
-		"f-person/git-blame.nvim",
-		enabled = true,
-	},
-	{
 		"nvim-telescope/telescope-fzf-native.nvim",
 		build = "make",
 	},
 	{
 		"kevinhwang91/nvim-bqf",
-		dependencies = { { "junegunn/fzf", module = "nvim-bqf" } },
+		dependencies = {
+			{ "junegunn/fzf", module = "nvim-bqf" },
+		},
 	},
 	{
 		"sindrets/diffview.nvim",
@@ -77,7 +75,7 @@ require("lazy").setup({
 	{
 		"lewis6991/gitsigns.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
-		event = "BufReadPre",
+		event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			require("config.gitsigns")
 		end,
