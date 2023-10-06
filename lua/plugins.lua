@@ -70,7 +70,11 @@ require("lazy").setup({
 	},
 	{
 		"lukas-reineke/indent-blankline.nvim",
-		main = "ibl",
+		tag = "v2.20.8",
+		event = "BufReadPre",
+		config = function()
+			require("config/indent-blankline")
+		end,
 	},
 	{
 		"lewis6991/gitsigns.nvim",

@@ -7,5 +7,3 @@ require("mappings")
 require("options")
 -- Vim autocommands/autogroups
 require("autocmd")
-
-vim.g.gitblame_enabled = 0
