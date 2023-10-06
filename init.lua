@@ -1,9 +1,9 @@
 -- References to ./lua/
--- Plugin management via Packer
-require("plugins")
+-- Plugin management via Lazy
+require("core.lazy")
 -- Vim mappings, see lua/config/which.lua for more mappings
-require("mappings")
+require("core.mappings")
 -- All non plugin related (vim) options
-require("options")
+require("core.options")
 -- Vim autocommands/autogroups
-require("autocmd")
+require("core.autocmd")
