@@ -3,6 +3,7 @@ local wo = vim.wo
 local fn = vim.fn
 
 vim.cmd("set inccommand=split")
+o.background = "dark"
 o.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50" -- block in normal and beam cursor in insert mode
 o.updatetime = 100 -- faster completion
 o.timeoutlen = 500 -- time to wait for a mapped sequence to complete (in milliseconds)
@@ -18,7 +19,7 @@ o.fileencoding = "utf-8" -- the encoding written to a file
 o.conceallevel = 0 -- so that `` is visible in markdown files
 o.number = true
 o.relativenumber = false
-o.cmdheight = 1 -- space for displaying messages/commands
+o.cmdheight = 0 -- space for displaying messages/commands
 o.showmode = false -- we don't need to see things like -- INSERT -- anymore
 o.showtabline = 2 -- always show tabs
 o.laststatus = 3
@@ -43,7 +44,7 @@ o.shortmess = o.shortmess + "c" -- prevent "pattern not found" messages
 wo.colorcolumn = "99999"
 o.wildmode = "full"
 o.wildmenu = true
-o.lazyredraw = true -- do not redraw screen while running macros
+o.lazyredraw = false -- do not redraw screen while running macros
 o.grepprg = "rg --hidden --vimgrep --smart-case --"
 o.completeopt = { "menu", "menuone", "noselect", "noinsert" } -- A comma separated list of options for Insert mode completion
 o.wildignorecase = true -- When set case is ignored when completing file names and directories
@@ -63,9 +64,4 @@ o.wildignore = [[
 vim.cmd("colorscheme ghdark")
 vim.cmd("highlight Normal guibg=#000000")
 vim.cmd("highlight EndOfBuffer ctermbg=NONE guibg=NONE")
-vim.cmd("highlight IndentBlanklineChar cterm=nocombine ctermfg=0 gui=nocombine guifg=#333333")
-vim.cmd("highlight IndentBlanklineSpaceChar cterm=nocombine ctermfg=0 gui=nocombine guifg=bg")
-vim.cmd("highlight IndentBlanklineContextStart cterm=underline gui=underline guisp=#77bdfb")
-vim.cmd("highlight IndentBlanklineSpaceCharBlankline cterm=nocombine ctermfg=0 gui=nocombine guifg=bg")
-vim.cmd("highlight IndentBlanklineContextChar cterm=nocombine ctermfg=75 gui=nocombine guifg=#666666")
 vim.cmd("highlight GitSignsCurrentLineBlame cterm=nocombine ctermfg=75 gui=nocombine guifg=#0ffcc1")

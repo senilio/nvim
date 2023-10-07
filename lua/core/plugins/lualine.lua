@@ -1,7 +1,8 @@
 return {
 	"nvim-lualine/lualine.nvim",
-	event = "VimEnter",
-	dependencies = { "kyazdani42/nvim-web-devicons", opt = true },
+	enabled = true,
+	event = "VeryLazy",
+	dependencies = { "kyazdani42/nvim-web-devicons", lazy = true },
 	config = function()
 		-- use gitsigns as source info
 		local function diff_source()
@@ -19,8 +20,12 @@ return {
 			options = {
 				theme = "auto",
 				icons_enabled = true,
-				disabled_filetypes = {},
-				always_divide_middle = false,
+				section_separators = { left = "", right = "" },
+				disabled_filetypes = {
+					statusline = {},
+					winbar = {},
+				},
+				always_divide_middle = true,
 				globalstatus = true,
 			},
 			sections = {

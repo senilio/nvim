@@ -1,7 +1,7 @@
 local M = {
-
 	"akinsho/nvim-bufferline.lua",
 	dependencies = "kyazdani42/nvim-web-devicons",
+	enabled = true,
 	event = "BufReadPre",
 	config = function()
 		require("bufferline").setup({

@@ -1,18 +1,23 @@
 local M = {
 	"lukas-reineke/indent-blankline.nvim",
-	tag = "v2.20.8",
-	event = "BufReadPre",
-	config = function()
-		require("indent_blankline").setup({
-			indentLine_enabled = 1,
-			char = "▏",
-			filetype_exclude = {
+	main = "ibl",
+	event = { "BufReadPost", "BufNewFile" },
+	opts = {
+		scope = {
+			enabled = true,
+		},
+		indent = {
+			char = { "|", "¦", "┆", "┊" },
+		},
+		exclude = {
+			filetypes = {
 				"startify",
 				"dashboard",
 				"dotooagenda",
 				"log",
 				"fugitive",
 				"gitcommit",
+				"packer",
 				"vimwiki",
 				"markdown",
 				"json",
@@ -21,6 +26,7 @@ local M = {
 				"help",
 				"todoist",
 				"NvimTree",
+				"neo-tree",
 				"peekaboo",
 				"git",
 				"TelescopePrompt",
@@ -28,26 +34,18 @@ local M = {
 				"flutterToolsOutline",
 				"", -- for all buffers without a file type
 			},
-			buftype_exclude = { "terminal", "nofile" },
-			show_trailing_blankline_indent = true,
-			show_first_indent_level = false,
-			show_current_context = true,
-			char_list = { "|", "¦", "┆", "┊" },
-			space_char = " ",
-			context_patterns = {
-				"class",
-				"function",
-				"method",
-				"block",
-				"list_literal",
-				"selector",
-				"^if",
-				"^table",
-				"if_statement",
-				"while",
-				"for",
+			buftypes = {
+				"terminal",
+				"nofile",
 			},
-		})
+		},
+	},
+	config = function(_, opts)
+		require("ibl").setup(opts)
+		local hooks = require("ibl.hooks")
+		hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_tab_indent_level)
+		hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_space_indent_level)
+		-- hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
 	end,
 }
 
