@@ -1,4 +1,4 @@
 return {
-	"cuducos/yaml.nvim",
-	ft = { "yaml" },
+  "cuducos/yaml.nvim",
+  ft = { "yaml" },
 }

@@ -1,3 +1,3 @@
 return {
-	"vv9k/vim-github-dark",
+  "vv9k/vim-github-dark",
 }
