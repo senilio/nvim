@@ -101,9 +101,6 @@ local M = {
       ["4"] = "which_key_ignore",
       ["5"] = "which_key_ignore",
       ["6"] = "which_key_ignore",
-      -- ["<leader>"] = {
-      -- 	name = "Leader",
-      -- },
       b = {
         name = "Buffers",
         b = {
@@ -139,10 +136,8 @@ local M = {
           "<cmd>lua require'telescope.builtin'.find_files()<cr>",
           "Find File",
         },
-        l = { "<cmd>Lf<cr>", "Open LF" },
         p = { "<cmd>NvimTreeToggle<cr>", "Toogle Tree" },
         r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-        s = { "<cmd>w<cr>", "Save Buffer" },
         T = { "<cmd>NvimTreeFindFile<CR>", "Find in Tree" },
         z = { "<cmd>Telescope zoxide list<CR>", "Zoxide" },
       },
