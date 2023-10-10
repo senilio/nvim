@@ -3,6 +3,7 @@ local M = {
   "nvim-telescope/telescope.nvim",
   cmd = "Telescope",
   dependencies = {
+    "nvim-lua/plenary.nvim",
     "jvgrootveld/telescope-zoxide",
     "crispgm/telescope-heading.nvim",
     "nvim-telescope/telescope-symbols.nvim",
@@ -17,21 +18,93 @@ local M = {
 
     telescope.setup({
       extensions = {
-        fzf = {
-          fuzzy = true, -- false will only do exact matching
-          override_generic_sorter = true, -- override the generic sorter
-          override_file_sorter = true, -- override the file sorter
-          case_mode = "smart_case", -- or "ignore_case" or "respect_case" or "smart_case"
+        file_browser = {
+          theme = "ivy",
+          previewer = true,
+          -- disables netrw and use telescope-file-browser in its place
+          hijack_netrw = true,
+          hidden = true,
+          mappings = {
+            ["i"] = {
+              -- your custom insert mode mappings
+            },
+            ["n"] = {
+              -- your custom normal mode mappings
+            },
+          },
         },
       },
       pickers = {
         find_files = {
           hidden = true,
         },
-        -- find_command = { "fd", "--hidden", "--type", "file", "--follow", "--strip-cwd-prefix" },
+        oldfiles = {
+          cwd_only = true,
+        },
+        buffers = {
+          ignore_current_buffer = true,
+          sort_lastused = true,
+        },
+        live_grep = {
+          only_sort_text = true, -- grep for content and not file name/path
+          mappings = {
+            i = { ["<c-f>"] = require("telescope.actions").to_fuzzy_refine },
+          },
+        },
       },
       defaults = {
-        file_ignore_patterns = { "node_modules", ".terraform", "%.jpg", "%.png" },
+        -- file_ignore_patterns = { "node_modules", ".terraform", "%.jpg", "%.png" },
+        file_ignore_patterns = {
+          "%.7z",
+          "%.avi",
+          "%.JPEG",
+          "%.JPG",
+          "%.V",
+          "%.RAF",
+          "%.burp",
+          "%.bz2",
+          "%.cache",
+          "%.class",
+          "%.dll",
+          "%.docx",
+          "%.dylib",
+          "%.epub",
+          "%.exe",
+          "%.flac",
+          "%.ico",
+          "%.ipynb",
+          "%.jar",
+          "%.jpeg",
+          "%.jpg",
+          "%.lock",
+          "%.mkv",
+          "%.mov",
+          "%.mp4",
+          "%.otf",
+          "%.pdb",
+          "%.pdf",
+          "%.png",
+          "%.rar",
+          "%.sqlite3",
+          "%.svg",
+          "%.tar",
+          "%.tar.gz",
+          "%.ttf",
+          "%.webp",
+          "%.zip",
+          "^.git/",
+          "^.settings/",
+          "^.vscode/",
+          "^.terraform/",
+          "__pycache__/*",
+          "build/",
+          "env/",
+          "gradle/",
+          "node_modules/",
+          "smalljre_*/*",
+          "target/",
+          "vendor/*",
+        },
         -- used for grep_string and live_grep
         vimgrep_arguments = {
           "rg",
@@ -39,8 +112,8 @@ local M = {
           "--color=never",
           "--no-heading",
           "--with-filename",
-          "--line-number",
-          "--column",
+          --[[ "--line-number",
+          "--column", ]]
           "--smart-case",
           "--no-ignore",
           "--hidden",
@@ -76,10 +149,10 @@ local M = {
         scroll_strategy = "cycle",
         selection_strategy = "reset",
         sorting_strategy = "descending",
-        layout_strategy = "horizontal",
+        layout_strategy = "vertical",
         layout_config = {
-          width = 0.95,
-          height = 0.85,
+          width = 0.75,
+          height = 0.55,
           -- preview_cutoff = 120,
           prompt_position = "top",
           horizontal = {
@@ -103,11 +176,11 @@ local M = {
       },
     })
 
-    -- telescope.load_extension("projects")
+    telescope.load_extension("file_browser")
+    telescope.load_extension("noice")
     telescope.load_extension("fzf")
     telescope.load_extension("zoxide")
     telescope.load_extension("heading")
-    telescope.load_extension("file_browser")
   end,
 }
 

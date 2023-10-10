@@ -23,11 +23,11 @@ local M = {
       current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
       current_line_blame_opts = {
         virt_text = true,
-        virt_text_pos = "overlay", -- 'eol' | 'overlay' | 'right_align'
+        virt_text_pos = "right_align", -- 'eol' | 'overlay' | 'right_align'
         delay = 100,
         ignore_whitespace = false,
       },
-      current_line_blame_formatter = "<author>, <author_time:%Y-%m-%d %R>: <summary>",
+      current_line_blame_formatter = "<author>, <author_time:%Y-%m-%d>: <summary>",
       sign_priority = 6,
       update_debounce = 100,
       status_formatter = nil, -- Use default
