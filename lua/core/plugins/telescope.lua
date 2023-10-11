@@ -9,7 +9,7 @@ local M = {
     "nvim-telescope/telescope-symbols.nvim",
     "nvim-telescope/telescope-file-browser.nvim",
     "ptethng/telescope-makefile",
-    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    -- { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
   },
   config = function()
     local telescope = require("telescope")
@@ -147,7 +147,7 @@ local M = {
 
     telescope.load_extension("file_browser")
     telescope.load_extension("noice")
-    telescope.load_extension("fzf")
+    -- telescope.load_extension("fzf")
     telescope.load_extension("zoxide")
     telescope.load_extension("heading")
   end,

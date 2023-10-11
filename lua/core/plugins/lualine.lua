@@ -18,7 +18,7 @@ return {
 
     require("lualine").setup({
       options = {
-        theme = "auto",
+        theme = "iceberg_dark",
         icons_enabled = true,
         section_separators = { left = "", right = "" },
         disabled_filetypes = {
