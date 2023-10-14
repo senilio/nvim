@@ -1,6 +1,6 @@
 return {
   "nvim-lualine/lualine.nvim",
-  enabled = false,
+  enabled = true,
   event = "VeryLazy",
   dependencies = { "kyazdani42/nvim-web-devicons", lazy = true },
   config = function()
@@ -18,7 +18,7 @@ return {
 
     require("lualine").setup({
       options = {
-        theme = "iceberg_dark",
+        theme = "auto",
         icons_enabled = true,
         section_separators = { left = "", right = "" },
         disabled_filetypes = {
