@@ -27,7 +27,7 @@ return {
             { hl = "MiniStatuslineFilename", strings = { filename } },
             "%=", -- End left alignment
             { hl = "MiniStatuslineFileinfo", strings = { fileinfo } },
-            { hl = mode_hl, strings = { searchcount, location } },
+            { hl = mode_hl, strings = { location, searchcount } },
           })
         end,
       },
