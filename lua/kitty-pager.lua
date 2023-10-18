@@ -5,10 +5,10 @@ return function(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)
   vim.opt.number = false
   vim.opt.relativenumber = false
   vim.opt.termguicolors = true
-  vim.opt.showmode = false
+  vim.opt.showmode = true
   vim.opt.ruler = false
-  vim.opt.laststatus = 0
-  vim.opt.showcmd = false
+  vim.opt.laststatus = 1
+  vim.opt.showcmd = true
   vim.opt.scrollback = 1000
   local term_buf = vim.api.nvim_create_buf(true, false)
   local term_io = vim.api.nvim_open_term(term_buf, {})
