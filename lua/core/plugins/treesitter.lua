@@ -24,9 +24,11 @@ local M = {
         "ledger",
         "lua",
         "python",
+        "regex",
         "toml",
         "yaml",
         "markdown",
+        "markdown_inline",
       }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
       ignore_install = {}, -- List of parsers to ignore installing
       highlight = {
