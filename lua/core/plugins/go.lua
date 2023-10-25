@@ -24,10 +24,6 @@ local M = {
       -- if lsp_on_attach is a function: use this function as on_attach function for gopls
       lsp_codelens = false, -- set to false to disable codelens, true by default
       lsp_keymaps = false, -- set to false to disable gopls/lsp keymap
-      lsp_diag_hdlr = true, -- hook lsp diag handler
-      lsp_diag_virtual_text = { space = 0, prefix = "" }, -- virtual text setup
-      lsp_diag_signs = true,
-      lsp_diag_update_in_insert = false,
       lsp_document_formatting = true,
       -- set to true: use gopls to format
       -- false if you want to use other formatter tool(e.g. efm, nulls)
