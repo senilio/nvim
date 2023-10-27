@@ -22,11 +22,13 @@ api.nvim_create_autocmd("TextYankPost", {
   command = "silent! lua vim.highlight.on_yank()",
   group = yankGrp,
 })
+
 -- go to last loc when opening a buffer
 api.nvim_create_autocmd(
   "BufReadPost",
   { command = [[if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g`\"" | endif]] }
 )
+
 -- windows to close with "q"
 api.nvim_create_autocmd(
   "FileType",
@@ -54,3 +56,12 @@ vim.api.nvim_create_autocmd(
 
 -- Run gofmt + goimport on save
 vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').goimport() ]], false)
+
+-- fix terraform and hcl comment string
+vim.api.nvim_create_autocmd("FileType", {
+  group = vim.api.nvim_create_augroup("FixTerraformCommentString", { clear = true }),
+  callback = function(ev)
+    vim.bo[ev.buf].commentstring = "# %s"
+  end,
+  pattern = { "terraform", "hcl" },
+})
