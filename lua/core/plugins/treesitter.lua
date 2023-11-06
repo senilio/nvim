@@ -15,6 +15,7 @@ local M = {
         "bash",
         "cmake",
         "dockerfile",
+        "fish",
         "go",
         "hcl",
         "html",

@@ -1,5 +1,5 @@
 local M = {
-  "jose-elias-alvarez/null-ls.nvim",
+  "nvimtools/none-ls.nvim",
   dependencies = {
     "nvim-lua/plenary.nvim",
   },
@@ -26,6 +26,8 @@ local M = {
         nls.builtins.formatting.shfmt,
         nls.builtins.diagnostics.ruff,
         nls.builtins.formatting.rustfmt,
+        nls.builtins.diagnostics.fish,
+        nls.builtins.formatting.fish_indent,
       },
       on_attach = function(client, bufnr)
         vim.keymap.set(
