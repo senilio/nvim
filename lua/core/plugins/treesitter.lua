@@ -2,7 +2,6 @@ local M = {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
   dependencies = {
-    "JoosepAlviste/nvim-ts-context-commentstring",
     "nvim-treesitter/nvim-treesitter-textobjects",
     "RRethy/nvim-treesitter-endwise",
     "mfussenegger/nvim-ts-hint-textobject",
@@ -34,9 +33,6 @@ local M = {
         "markdown_inline",
         "vim",
       }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-      context_commentstring = {
-        enable = true,
-      },
       ignore_install = {}, -- List of parsers to ignore installing
       highlight = {
         enable = true, -- false will disable the whole extension
