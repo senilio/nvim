@@ -72,7 +72,15 @@ vim.cmd("highlight GhBlue ctermfg=75 guifg=#6bb7fa")
 vim.cmd("highlight EyelinerPrimary guifg=#7CFC00 gui=underline,bold")
 vim.cmd("highlight EyelinerSecondary guifg=#ffffff gui=bold")
 vim.cmd("highlight MiniIndentscopeSymbol guifg=#444444 gui=NONE")
+
+-- Sort ascending
 vim.cmd([[
-  nnoremap <silent> so <Cmd>sort<CR>
-  vnoremap <silent> so <Esc><Cmd>sort<CR>
+  nnoremap <silent> sa <Cmd>sort<CR>
+  vnoremap <silent> sa <Esc><Cmd>sort<CR>
+]])
+
+-- Sort descending
+vim.cmd([[
+  nnoremap <silent> sd <Cmd>sort!<CR>
+  vnoremap <silent> sd <Esc><Cmd>sort!<CR>
 ]])
