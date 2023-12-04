@@ -78,5 +78,5 @@ vim.cmd([[
   nnoremap <silent> sa <Cmd>Sort<CR>
   vnoremap <silent> sa <Esc><Cmd>Sort<CR>
   nnoremap <silent> sd <Cmd>Sort!<CR>
-  vnoremap <silent> sd v<Esc><Cmd>Sort!<CR>
+  vnoremap <silent> sd <Esc><Cmd>Sort!<CR>
 ]])
