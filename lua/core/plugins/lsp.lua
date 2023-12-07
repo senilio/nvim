@@ -4,7 +4,9 @@ local M = {
     "onsails/lspkind-nvim",
     "famiu/bufdelete.nvim",
   },
-  config = function() end,
+  config = function()
+    require("lspconfig").terraformls.setup({})
+  end,
 }
 
 return M

@@ -2,6 +2,7 @@ local M = {
   "willothy/flatten.nvim",
   config = function()
     require("flatten").setup({
+      test = "hello",
       callbacks = {
         -- Called when a request to edit file(s) is received
         pre_open = function() end,

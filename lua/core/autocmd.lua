@@ -58,13 +58,16 @@ vim.api.nvim_create_autocmd(
 )
 
 -- Run gofmt + goimport on save
-vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').goimport() ]], false)
+api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').goimport() ]], false)
 
 -- fix terraform and hcl comment string
-vim.api.nvim_create_autocmd("FileType", {
+api.nvim_create_autocmd("FileType", {
   group = vim.api.nvim_create_augroup("FixTerraformCommentString", { clear = true }),
   callback = function(ev)
     vim.bo[ev.buf].commentstring = "# %s"
   end,
   pattern = { "terraform", "hcl" },
 })
+
+-- format terraform files on save
+api.nvim_create_autocmd({ "BufWritePre" }, { pattern = { "*.tf", "*.tfvars" }, command = "lua vim.lsp.buf.format()" })

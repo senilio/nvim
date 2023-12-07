@@ -80,3 +80,6 @@ vim.cmd([[
   nnoremap <silent> sd <Cmd>Sort!<CR>
   vnoremap <silent> sd <Esc><Cmd>Sort!<CR>
 ]])
+
+vim.cmd([[silent! autocmd! filetypedetect BufRead,BufNewFile *.tf]])
+vim.cmd([[autocmd BufRead,BufNewFile *.tf,*.tfvars set filetype=terraform]])

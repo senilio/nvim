@@ -17,7 +17,7 @@ local M = {
     cmp.setup({
       formatting = {
         format = lspkind.cmp_format({
-          with_text = false,
+          with_text = true,
           maxwidth = 50,
           mode = "symbol",
           menu = {
@@ -32,8 +32,16 @@ local M = {
           },
         }),
       },
-      experimental = { native_menu = false, ghost_text = false },
-      completion = { autocomplete = false },
+      experimental = { ghost_text = false },
+      view = {
+        docs = {
+          auto_open = false,
+        },
+      },
+      window = {
+        completion = cmp.config.window.bordered({}),
+        documentation = {},
+      },
       snippet = {
         expand = function(args)
           require("luasnip").lsp_expand(args.body)
@@ -48,7 +56,7 @@ local M = {
         ["<C-e>"] = cmp.mapping.close(),
         ["<CR>"] = cmp.mapping.confirm({
           behavior = cmp.ConfirmBehavior.Replace,
-          select = false,
+          select = true,
         }),
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
@@ -81,6 +89,12 @@ local M = {
     -- Use cmdline & path source for ':'.
     cmp.setup.cmdline(":", {
       sources = cmp.config.sources({ { name = "path" } }, { { name = "cmdline" } }),
+    })
+
+    -- Set up lspconfig.
+    local capabilities = require("cmp_nvim_lsp").default_capabilities()
+    require("lspconfig")["terraformls"].setup({
+      capabilities = capabilities,
     })
   end,
 }
