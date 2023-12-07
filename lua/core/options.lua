@@ -63,15 +63,6 @@ o.wildignore = [[
 *.swp,.lock,.DS_Store,._*
 */tmp/*,*.so,*.swp,*.zip,**/node_modules/**,**/target/**,**.terraform/**
 ]]
-vim.cmd("colorscheme ghdark")
-vim.cmd("highlight Normal guibg=#000000")
-vim.cmd("highlight EndOfBuffer ctermbg=NONE guibg=NONE")
-vim.cmd("highlight GitSignsCurrentLineBlame cterm=nocombine ctermfg=75 gui=nocombine guifg=#0ffcc1")
-vim.cmd("highlight GhLightBlue ctermfg=153 guifg=#b9dbfc")
-vim.cmd("highlight GhBlue ctermfg=75 guifg=#6bb7fa")
-vim.cmd("highlight EyelinerPrimary guifg=#7CFC00 gui=underline,bold")
-vim.cmd("highlight EyelinerSecondary guifg=#ffffff gui=bold")
-vim.cmd("highlight MiniIndentscopeSymbol guifg=#444444 gui=NONE")
 
 -- Sort
 vim.cmd([[
