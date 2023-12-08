@@ -65,6 +65,7 @@ o.wildignore = [[
 ]]
 vim.cmd("highlight Normal guibg=#000000")
 vim.cmd("highlight LineNr guibg=#111111")
+vim.cmd("highlight GitSignsCurrentLineBlame guifg=#7BEA7B")
 
 -- Sort
 vim.cmd([[
