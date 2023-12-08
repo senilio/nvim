@@ -10,9 +10,8 @@ local M = {
       additions = {},
       allow_caps_additions = {
         { "enable", "disable" },
-        -- enable → disable
-        -- Enable → Disable
-        -- ENABLE → DISABLE
+        { "up", "down" },
+        { "left", "right" },
       },
     })
   end,

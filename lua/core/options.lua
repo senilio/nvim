@@ -63,6 +63,8 @@ o.wildignore = [[
 *.swp,.lock,.DS_Store,._*
 */tmp/*,*.so,*.swp,*.zip,**/node_modules/**,**/target/**,**.terraform/**
 ]]
+vim.cmd("highlight Normal guibg=#000000")
+vim.cmd("highlight LineNr guibg=#111111")
 
 -- Sort
 vim.cmd([[

@@ -1,26 +1,51 @@
+local active = {
+  fg = "#ffffff",
+  bg = "#222222",
+}
+
+local inactive = {
+  fg = "#aaaaaa",
+  bg = "#000000",
+}
+
 local M = {
   "akinsho/nvim-bufferline.lua",
   dependencies = "kyazdani42/nvim-web-devicons",
+  version = "*",
   enabled = true,
   event = "BufReadPre",
   config = function()
     require("bufferline").setup({
+      highlights = {
+        fill = inactive,
+        background = inactive,
+        separator = inactive,
+        numbers = inactive,
+        numbers_visible = inactive,
+        numbers_selected = active,
+        modified = inactive,
+        modified_visible = inactive,
+        modified_selected = active,
+        buffer_visible = inactive,
+        buffer_selected = active,
+      },
       options = {
         numbers = function(opts)
           return string.format("%s", opts.id) -- :h bufferline-numbers
         end,
+        indicator = { icon = "", style = "none" },
         close_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
         right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
         left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"
         middle_mouse_command = nil, -- can be a string | function, see "Mouse actions"
-        buffer_close_icon = "",
+        -- buffer_close_icon = "",
         modified_icon = "●",
         close_icon = "",
         left_trunc_marker = "",
         right_trunc_marker = "",
         max_name_length = 18,
-        max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
-        tab_size = 18,
+        max_prefix_length = 8, -- prefix used when a buffer is de-duplicated
+        tab_size = 1,
         diagnostics = "nvim_lsp",
         diagnostics_indicator = function(count, level)
           local icon = level:match("error") and " " or " "
@@ -58,13 +83,14 @@ local M = {
         persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
         -- can also be a table containing 2 custom separators
         -- [focused and unfocused]. eg: { '|', '|' }
-        separator_style = "thin",
+        separator_style = { "", "" },
         enforce_regular_tabs = false,
         always_show_bufferline = false,
         sort_by = "id",
       },
     })
   end,
+  -- vim.cmd("highlight GhBlue ctermfg=75 guifg=#6bb7fa")
 }
 
 return M
