@@ -32,7 +32,7 @@ o.scrolloff = 3 -- Minimal number of screen lines to keep above and below the cu
 o.shiftwidth = 4 -- the number of spaces inserted for each indentation
 o.shortmess = o.shortmess + "c" -- prevent "pattern not found" messages
 o.showmode = false -- we don't need to see things like -- INSERT -- anymore
-o.showtabline = 2 -- always show tabs
+o.showtabline = 0 -- always show tabs
 o.sidescrolloff = 5 -- The minimal number of columns to scroll horizontally
 o.smartcase = true -- smart case
 o.smartindent = true -- make indenting smarter again
@@ -64,8 +64,8 @@ o.wildignore = [[
 */tmp/*,*.so,*.swp,*.zip,**/node_modules/**,**/target/**,**.terraform/**
 ]]
 vim.cmd("highlight Normal guibg=#000000")
-vim.cmd("highlight LineNr guibg=#111111")
-vim.cmd("highlight GitSignsCurrentLineBlame guifg=#7BEA7B")
+vim.cmd("highlight NotifyBackground guibg=#000000")
+vim.cmd("colorscheme github_dark")
 
 -- Sort
 vim.cmd([[

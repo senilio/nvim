@@ -1,12 +1,12 @@
-local active = {
-  fg = "#ffffff",
-  bg = "#222222",
-}
-
-local inactive = {
-  fg = "#aaaaaa",
-  bg = "#000000",
-}
+-- local active = {
+--   fg = "#ffffff",
+--   bg = "#22FF22",
+-- }
+--
+-- local inactive = {
+--   fg = "#aaaaaa",
+--   bg = "#00FF00",
+-- }
 
 local M = {
   "akinsho/nvim-bufferline.lua",
@@ -16,19 +16,19 @@ local M = {
   event = "BufReadPre",
   config = function()
     require("bufferline").setup({
-      highlights = {
-        fill = inactive,
-        background = inactive,
-        separator = inactive,
-        numbers = inactive,
-        numbers_visible = inactive,
-        numbers_selected = active,
-        modified = inactive,
-        modified_visible = inactive,
-        modified_selected = active,
-        buffer_visible = inactive,
-        buffer_selected = active,
-      },
+      -- highlights = {
+      --   fill = inactive,
+      --   background = inactive,
+      --   separator = inactive,
+      --   numbers = inactive,
+      --   numbers_visible = inactive,
+      --   numbers_selected = active,
+      --   modified = inactive,
+      --   modified_visible = inactive,
+      --   modified_selected = active,
+      --   buffer_visible = inactive,
+      --   buffer_selected = active,
+      -- },
       options = {
         numbers = function(opts)
           return string.format("%s", opts.id) -- :h bufferline-numbers

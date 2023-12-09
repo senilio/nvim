@@ -97,6 +97,7 @@ function M.config()
       -- event is always "notify" and kind can be any log level as a string
       -- The default routes will forward notifications to nvim-notify
       -- Benefit of using Noice for this is the routing and consistent history view
+      background_colour = "#000000",
       enabled = true,
       view = "notify",
     },

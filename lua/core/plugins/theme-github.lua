@@ -53,8 +53,6 @@ local M = {
         },
       },
     })
-
-    vim.cmd("colorscheme github_dark")
   end,
 }
 
