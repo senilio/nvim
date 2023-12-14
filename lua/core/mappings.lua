@@ -5,7 +5,6 @@ expr_options = { expr = true, silent = true }
 --Custom mappings
 map("v", "Y", '"*y', { silent = false }) -- YANK visual block to system clipboard
 map("n", "YY", '"*yy', { silent = false }) -- YANK line to system clipboard
-map("v", "P", '"*p', { silent = false }) -- Paste from system clipboard
 
 map("n", "<leader>1", "<cmd>b1<cr>", { silent = false })
 map("n", "<leader>2", "<cmd>b2<cr>", { silent = false })

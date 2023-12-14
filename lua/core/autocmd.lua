@@ -6,6 +6,10 @@ api.nvim_create_autocmd("BufWritePre", {
   command = [[:%s/\s\+$//e]],
   group = TrimWhiteSpaceGrp,
 })
+api.nvim_create_autocmd("BufWritePre", {
+  command = [[:%s#\($\n\s*\)\+\%$##e]],
+  group = TrimWhiteSpaceGrp,
+})
 
 -- don't auto comment new line
 api.nvim_create_autocmd("BufEnter", { command = [[set formatoptions-=cro]] })
@@ -69,5 +73,5 @@ api.nvim_create_autocmd("FileType", {
   pattern = { "terraform", "hcl" },
 })
 
--- format terraform files on save
-api.nvim_create_autocmd({ "BufWritePre" }, { pattern = { "*.tf", "*.tfvars" }, command = "lua vim.lsp.buf.format()" })
+-- -- format terraform files on save
+-- api.nvim_create_autocmd({ "BufWritePre" }, { pattern = { "*.tf", "*.tfvars" }, command = "lua vim.lsp.buf.format()" })

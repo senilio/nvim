@@ -14,7 +14,7 @@ local M = {
         nls.builtins.formatting.prettier.with({
           extra_args = { "--single-quote", "false" },
         }),
-        -- nls.builtins.formatting.terraform_fmt,
+        nls.builtins.formatting.terraform_fmt,
         nls.builtins.formatting.black,
         nls.builtins.formatting.goimports,
         nls.builtins.formatting.gofumpt,
