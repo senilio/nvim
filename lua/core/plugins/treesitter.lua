@@ -49,26 +49,26 @@ local M = {
       },
       indent = { enable = true },
       autopairs = { { enable = true } },
-      textobjects = {
-        select = {
-          enable = true,
-          -- Automatically jump forward to textobj, similar to targets.vim
-          lookahead = true,
-          keymaps = {
-            -- You can use the capture groups defined in textobjects.scm
-            ["af"] = "@function.outer",
-            ["if"] = "@function.inner",
-            ["ac"] = "@class.outer",
-            ["ic"] = "@class.inner",
-            ["al"] = "@loop.outer",
-            ["il"] = "@loop.inner",
-            ["ib"] = "@block.inner",
-            ["ab"] = "@block.outer",
-            ["ir"] = "@parameter.inner",
-            ["ar"] = "@parameter.outer",
-          },
-        },
-      },
+      -- textobjects = {
+      --   select = {
+      --     enable = true,
+      --     -- Automatically jump forward to textobj, similar to targets.vim
+      --     lookahead = true,
+      --     keymaps = {
+      --       -- You can use the capture groups defined in textobjects.scm
+      --       ["af"] = "@function.outer",
+      --       ["if"] = "@function.inner",
+      --       ["ac"] = "@class.outer",
+      --       ["ic"] = "@class.inner",
+      --       ["al"] = "@loop.outer",
+      --       ["il"] = "@loop.inner",
+      --       ["ib"] = "@block.inner",
+      --       ["ab"] = "@block.outer",
+      --       ["ir"] = "@parameter.inner",
+      --       ["ar"] = "@parameter.outer",
+      --     },
+      --   },
+      -- },
       rainbow = {
         enable = true,
         extended_mode = true, -- Highlight also non-parentheses delimiters, boolean or table: lang -> boolean
