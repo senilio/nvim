@@ -21,6 +21,8 @@ local M = {
         nls.builtins.formatting.shfmt,
         nls.builtins.diagnostics.fish,
         nls.builtins.formatting.fish_indent,
+        nls.builtins.diagnostics.terraform_validate,
+        nls.builtins.formatting.terraform_fmt,
       },
       on_attach = function(client, bufnr)
         vim.keymap.set(
