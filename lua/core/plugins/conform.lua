@@ -1,6 +1,6 @@
 local M = {
   "stevearc/conform.nvim",
-  enable = true,
+  enabled = true,
   event = { "BufReadPre", "BufNewFile", "InsertLeave" },
   disable_autoformat = false,
   config = function()
