@@ -5,6 +5,10 @@ local M = {
   disable_autoformat = false,
   config = function()
     require("conform").setup({
+      formatters = {
+        prettier = { extra_args = { "--single-quote", "false" } },
+        shfmt = { prepend_args = { "-i", "0" } },
+      },
       formatters_by_ft = {
         go = { "goimports", "gofmt" },
         javascript = { "prettier" },
@@ -16,11 +20,11 @@ local M = {
         terraform = { "terraform_fmt" },
         tex = { "latexindent" },
         typst = { "typstfmt" },
-        yaml = { "yamlfmt" },
+        yaml = { "prettier" },
       },
       format_on_save = {
         -- These options will be passed to conform.format()
-        timeout_ms = 500,
+        timeout_ms = 1000,
         lsp_fallback = true,
       },
     })
