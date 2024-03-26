@@ -8,6 +8,11 @@ local M = {
       formatters = {
         prettier = { extra_args = { "--single-quote", "false" } },
         shfmt = { prepend_args = { "-i", "0" } },
+        terraform_fmt = {
+          inherit = false,
+          command = "terraform",
+          args = { "fmt", "-no-color", "-" },
+        },
       },
       formatters_by_ft = {
         go = { "goimports", "gofmt" },
