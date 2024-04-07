@@ -2,7 +2,7 @@ local M = {
   "stevearc/conform.nvim",
   enabled = true,
   event = { "BufReadPre", "BufNewFile", "InsertLeave" },
-  disable_autoformat = false,
+  -- disable_autoformat = false,
   config = function()
     require("conform").setup({
       formatters = {
