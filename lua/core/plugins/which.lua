@@ -119,6 +119,7 @@ local M = {
         r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
         T = { "<cmd>NvimTreeFindFile<CR>", "Find in Tree" },
         z = { "<cmd>Telescope zoxide list<CR>", "Zoxide" },
+        m = { "<cmd>lua MiniFiles.open()<CR>", "Open mini-files" },
       },
       g = {
         name = "Git",
