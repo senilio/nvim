@@ -30,9 +30,6 @@ local M = {
       --   buffer_selected = active,
       -- },
       options = {
-        numbers = function(opts)
-          return string.format("%s", opts.id) -- :h bufferline-numbers
-        end,
         indicator = { icon = "", style = "none" },
         close_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
         right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
