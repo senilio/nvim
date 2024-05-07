@@ -1,13 +1,3 @@
--- local active = {
---   fg = "#ffffff",
---   bg = "#22FF22",
--- }
---
--- local inactive = {
---   fg = "#aaaaaa",
---   bg = "#00FF00",
--- }
-
 local M = {
   "akinsho/nvim-bufferline.lua",
   dependencies = "kyazdani42/nvim-web-devicons",
@@ -16,19 +6,16 @@ local M = {
   event = "BufReadPre",
   config = function()
     require("bufferline").setup({
-      -- highlights = {
-      --   fill = inactive,
-      --   background = inactive,
-      --   separator = inactive,
-      --   numbers = inactive,
-      --   numbers_visible = inactive,
-      --   numbers_selected = active,
-      --   modified = inactive,
-      --   modified_visible = inactive,
-      --   modified_selected = active,
-      --   buffer_visible = inactive,
-      --   buffer_selected = active,
-      -- },
+      highlights = {
+        background = {
+          fg = "#777777",
+          bg = "#000000",
+        },
+        buffer_selected = {
+          fg = "#eeeeee",
+          bg = "#141414",
+        },
+      },
       options = {
         indicator = { icon = "", style = "none" },
         close_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
