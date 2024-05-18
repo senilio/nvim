@@ -1,7 +1,6 @@
 local M = {
   "akinsho/nvim-bufferline.lua",
   dependencies = "kyazdani42/nvim-web-devicons",
-  version = "*",
   enabled = true,
   event = "BufReadPre",
   config = function()
@@ -13,7 +12,7 @@ local M = {
         },
         buffer_selected = {
           fg = "#eeeeee",
-          bg = "#141414",
+          bg = "#191919",
         },
       },
       options = {
