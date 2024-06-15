@@ -55,5 +55,6 @@
   "telescope.nvim": { "branch": "master", "commit": "c392f1b78eaaf870ca584bd698e78076ed301b26" },
   "vim-github-dark": { "branch": "master", "commit": "25361ac70c66d776bdcf5d749042f07e6e7f50ff" },
   "which-key.nvim": { "branch": "main", "commit": "0099511294f16b81c696004fa6a403b0ae61f7a0" },
-  "yaml.nvim": { "branch": "main", "commit": "77aa8812e652acc44ae16fd1dbeb5a952db937e0" }
+  "yaml.nvim": { "branch": "main", "commit": "77aa8812e652acc44ae16fd1dbeb5a952db937e0" },
+  "yazi.nvim": { "branch": "master", "commit": "e8ae16d722c20ed24a19c6e6e827887494075e14" }
 }
