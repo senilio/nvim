@@ -80,7 +80,6 @@ local M = {
       { "<leader>ff", "<cmd>lua require'telescope.builtin'.find_files()<cr>", desc = "Find File" },
       { "<leader>fm", "<cmd>lua MiniFiles.open()<CR>", desc = "Open mini-files" },
       { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Open Recent File" },
-      { "<leader>fz", "<cmd>Telescope zoxide list<CR>", desc = "Zoxide" },
       { "<leader>g", group = "Git" },
       { "<leader>gC", "<cmd>Telescope git_bcommits<cr>", desc = "Checkout commit(for current file)" },
       { "<leader>gR", "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", desc = "Reset Buffer" },
