@@ -25,6 +25,15 @@ local M = {
   ---@type YaziConfig
   opts = {
     open_for_directories = false,
+    hooks = {
+      yazi_opened_multiple_files = function(chosen_files, config, state)
+        -- Iterate over the selected files
+        for _, file in ipairs(chosen_files) do
+          -- Open each file in a new buffer
+          vim.api.nvim_command("e " .. file)
+        end
+      end,
+    },
   },
 }
 
