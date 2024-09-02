@@ -24,7 +24,9 @@ local M = {
   },
   ---@type YaziConfig
   opts = {
+    floating_window_scaling_factor = 0.85,
     open_for_directories = false,
+    yazi_floating_window_border = "single",
     hooks = {
       yazi_opened_multiple_files = function(chosen_files, config, state)
         -- Iterate over the selected files
