@@ -14,6 +14,11 @@ local M = {
       desc = "Create a selection for selected text or word under the cursor",
     },
   },
+  config = function()
+    require("multicursors").setup({
+      hint_config = false,
+    })
+  end,
 }
 
 return M
