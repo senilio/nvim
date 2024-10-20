@@ -14,7 +14,7 @@ return {
           local diagnostics = MiniStatusline.section_diagnostics({ trunc_width = 75 })
           local filename = MiniStatusline.section_filename({ trunc_width = 140 })
           local fileinfo = MiniStatusline.section_fileinfo({ trunc_width = 120 })
-          local searchcount = MiniStatusline.section_searchcount({ trunc_width = 75 })
+          local searchcount = MiniStatusline.section_searchcount({ trunc_width = 10 })
           local location = MiniStatusline.section_location({ trunc_width = 500 })
 
           -- Usage of `MiniStatusline.combine_groups()` ensures highlighting and
