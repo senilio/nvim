@@ -12,7 +12,7 @@ local M = {
         },
         buffer_selected = {
           fg = "#eeeeee",
-          bg = "#191919",
+          bg = "#1b1b1b",
         },
       },
       options = {

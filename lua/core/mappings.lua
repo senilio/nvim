@@ -20,5 +20,6 @@ map("n", "<leader>w<Right>", "<c-w>l", { silent = false })
 map("n", "<leader>w<Up>", "<c-w>k", { silent = false })
 map("n", "<leader>w<Down>", "<c-w>j", { silent = false })
 
-map("n", "<leader>d", "<cmd>Bdelete<CR>, ")
--- map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>")
+map("n", "<leader>d", "<cmd>Bdelete<CR>")
+map("n", "<leader>bd", "<cmd>Bdelete<CR>")
+map("n", "<leader>bn", "<cmd>tabnew<CR>")

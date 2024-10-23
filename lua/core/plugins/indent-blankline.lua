@@ -27,7 +27,6 @@ local M = {
         "help",
         "todoist",
         "NvimTree",
-        "neo-tree",
         "peekaboo",
         "git",
         "TelescopePrompt",

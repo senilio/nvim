@@ -4,7 +4,7 @@ local M = {
   event = { "BufReadPre", "BufNewFile" },
   init = function()
     vim.api.nvim_create_autocmd("FileType", {
-      pattern = { "alpha", "checkhealth", "dashboard", "help", "lazy", "mason", "neo-tree", "Trouble" },
+      pattern = { "alpha", "checkhealth", "dashboard", "help", "lazy", "mason", "Trouble" },
       callback = function()
         vim.b.miniindentscope_disable = true
       end,

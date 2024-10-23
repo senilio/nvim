@@ -6,8 +6,6 @@ local M = {
       bo = {
         -- if the file type is one of following, the window will be ignored
         filetype = {
-          "neo-tree",
-          "neo-tree-popup",
           "notify",
           "packer",
           "qf",

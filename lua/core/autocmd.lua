@@ -56,10 +56,7 @@ api.nvim_create_autocmd(
 api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, { pattern = { "*.tpl" }, command = "set filetype=tpl" })
 
 -- Enable spell checking for certain file types
-vim.api.nvim_create_autocmd(
-  { "BufRead", "BufNewFile" },
-  { pattern = { "*.txt", "*.md", "*.tex" }, command = "setlocal spell" }
-)
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, { pattern = { "*.txt", "*.md" }, command = "setlocal spell" })
 
 -- fix terraform and hcl comment string
 api.nvim_create_autocmd("FileType", {
