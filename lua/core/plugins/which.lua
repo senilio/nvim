@@ -67,25 +67,19 @@ local M = {
       -- { "<leader><Left>", hidden = true },
       -- { "<leader><Right>", hidden = true },
       { "<leader>f", group = "Files" },
-      { "<leader>fT", "<cmd>NvimTreeFindFile<CR>", desc = "Find in Tree" },
       { "<leader>fb", "<cmd>Telescope file_browser<cr>", desc = "File browser" },
       { "<leader>ff", "<cmd>lua require'telescope.builtin'.find_files()<cr>", desc = "Find File" },
       { "<leader>fm", "<cmd>lua MiniFiles.open()<CR>", desc = "Open mini-files" },
       { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Open Recent File" },
+      ------------------------------------------------
       { "<leader>g", group = "Git" },
       { "<leader>gC", "<cmd>Telescope git_bcommits<cr>", desc = "Checkout commit(for current file)" },
       { "<leader>gR", "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", desc = "Reset Buffer" },
       { "<leader>gb", "<cmd>Gitsigns toggle_current_line_blame<cr>", desc = "Toogle Blame" },
       { "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Checkout commit" },
-      { "<leader>gg", "<cmd>Telescope git_status<cr>", desc = "Open changed file" },
-      { "<leader>gj", "<cmd>lua require 'gitsigns'.next_hunk()<cr>", desc = "Next Hunk" },
-      { "<leader>gk", "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", desc = "Prev Hunk" },
-      { "<leader>gn", "<cmd>Neogit<cr>", desc = "Open Neogit" },
-      { "<leader>gp", "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", desc = "Preview Hunk" },
-      { "<leader>gr", "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", desc = "Reset Hunk" },
-      { "<leader>gs", "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", desc = "Stage Hunk" },
-      { "<leader>gt", desc = "Open Gitui" },
-      { "<leader>gu", "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", desc = "Undo Stage Hunk" },
+      { "<leader>gs", "<cmd>Telescope git_status<cr>", desc = "Open changed file" },
+      { "<leader>gg", "<cmd>Neogit<cr>", desc = "Open Neogit" },
+      ------------------------------------------------
       { "<leader>h", group = "Harpoon" },
       { "<leader>h1", "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", desc = "Open File 1" },
       { "<leader>h2", "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", desc = "Open File 2" },
@@ -93,6 +87,7 @@ local M = {
       { "<leader>h4", "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", desc = "Open File 4" },
       { "<leader>ha", "<cmd>lua require('harpoon.mark').add_file()<cr>", desc = "Add file" },
       { "<leader>hu", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", desc = "Open Menu" },
+      ------------------------------------------------
       { "<leader>l", group = "LSP" },
       { "<leader>lA", "<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>", desc = "Add Workspace Folder" },
       { "<leader>lD", "<cmd>lua vim.lsp.buf.declaration()<cr>", desc = "Go To Declaration" },
@@ -120,6 +115,7 @@ local M = {
       { "<leader>ls", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Document Symbols" },
       { "<leader>lt", "<cmd>lua vim.lsp.buf.type_definition()<cr>", desc = "Type Definition" },
       { "<leader>lw", "<cmd>Telescope diagnostics<cr>", desc = "Workspace Diagnostics" },
+      ------------------------------------------------
       { "<leader>m", group = "Misc" },
       {
         "<leader>ma",
@@ -148,6 +144,7 @@ local M = {
       { "<leader>sp", "<cmd>Telescope projects<cr>", desc = "Projects" },
       { "<leader>ss", "<cmd>Telescope grep_string<cr>", desc = "Text under cursor" },
       { "<leader>st", "<cmd>Telescope live_grep<cr>", desc = "Text" },
+      ------------------------------------------------
       { "<leader>w", group = "Window" },
       { "<leader>w=", "<c-w>=", desc = "Equally size" },
       { "<leader>wp", "<c-w>x", desc = "Swap" },
