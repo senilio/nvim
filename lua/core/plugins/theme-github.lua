@@ -48,8 +48,11 @@ local M = {
         github_dark = {
           EndOfBuffer = { bg = NONE },
           GitSignsCurrentLineBlame = { fg = "#0FFCC1" },
-          MiniIndentscopeSymbol = { fg = "#444444" },
+          MiniIndentscopeSymbol = { fg = "#555555" },
           CursorLine = { bg = "#222222" },
+          NeogitRecentcommits = { fg = "#8AFFFF" },
+          NeogitStagedchanges = { fg = "#2EFF2E" },
+          NeogitChangeMstaged = { fg = "#2EFF2E" },
         },
       },
     })
