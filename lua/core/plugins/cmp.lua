@@ -73,8 +73,8 @@ local M = {
       },
       sources = {
         { name = "nvim_lsp" },
-        { name = "buffer", keyword_length = 5 },
-        { name = "luasnip" },
+        -- { name = "buffer", keyword_length = 5 },
+        -- { name = "luasnip" },
         { name = "calc" },
         { name = "emoji" },
         { name = "spell" },
