@@ -78,7 +78,7 @@ local M = {
       { "<leader>gb", "<cmd>Gitsigns toggle_current_line_blame<cr>", desc = "Toogle Blame" },
       { "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Checkout commit" },
       { "<leader>gs", "<cmd>Telescope git_status<cr>", desc = "Open changed file" },
-      { "<leader>gg", "<cmd>Neogit<cr>", desc = "Open Neogit" },
+      { "<leader>g<Enter>", "<cmd>Neogit<cr>", desc = "Open Neogit" },
       ------------------------------------------------
       { "<leader>h", group = "Harpoon" },
       { "<leader>h1", "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", desc = "Open File 1" },
