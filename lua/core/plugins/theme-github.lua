@@ -53,6 +53,7 @@ local M = {
           NeogitRecentcommits = { fg = "#8AFFFF" },
           NeogitStagedchanges = { fg = "#2EFF2E" },
           NeogitChangeMstaged = { fg = "#2EFF2E" },
+          NeogitUnmergedchanges = { fg = "#2EFF2E" },
         },
       },
     })
