@@ -17,8 +17,8 @@ map("n", "<leader><Left>", "<cmd>bprev<cr>", { silent = false })
 
 map("n", "<leader>w<Left>", "<c-w>h", { silent = false })
 map("n", "<leader>w<Right>", "<c-w>l", { silent = false })
-map("n", "<leader>w<Up>", "<c-w>k", { silent = false })
-map("n", "<leader>w<Down>", "<c-w>j", { silent = false })
+map("n", "<leader><Up>", "<c-w>k", { silent = false })
+map("n", "<leader><Down>", "<c-w>j", { silent = false })
 
 map("n", "<leader>d", "<cmd>Bdelete<CR>")
 map("n", "<leader>bd", "<cmd>Bdelete<CR>")
