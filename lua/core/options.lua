@@ -66,14 +66,5 @@ o.wildignore = [[
 vim.cmd("highlight Normal guibg=#000000")
 vim.cmd("highlight NotifyBackground guibg=#000000")
 vim.cmd("colorscheme github_dark")
-
--- Sort
-vim.cmd([[
-  nnoremap <silent> sa <Cmd>Sort<CR>
-  vnoremap <silent> sa <Esc><Cmd>Sort<CR>
-  nnoremap <silent> sd <Cmd>Sort!<CR>
-  vnoremap <silent> sd <Esc><Cmd>Sort!<CR>
-]])
-
 vim.cmd([[silent! autocmd! filetypedetect BufRead,BufNewFile *.tf]])
 vim.cmd([[autocmd BufRead,BufNewFile *.tf,*.tfvars set filetype=terraform]])

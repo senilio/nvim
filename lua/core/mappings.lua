@@ -23,3 +23,8 @@ map("n", "<leader><Down>", "<c-w>j", { silent = false })
 map("n", "<leader>d", "<cmd>lua require('bufdelete').bufdelete(0)<CR>")
 map("n", "<leader>bd", "<cmd>lua require('bufdelete').bufdelete(0)<CR>")
 map("n", "<leader>bn", "<cmd>tabnew<CR>")
+
+map("n", "sa", "<cmd>Sort<cr>", { silent = true })
+map("v", "sa", "<esc><cmd>Sort<cr>", { silent = true })
+map("n", "sd", "<cmd>Sort!<cr>", { silent = true })
+map("v", "sd", "<esc><cmd>Sort!<cr>", { silent = true })
