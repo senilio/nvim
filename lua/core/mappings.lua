@@ -20,6 +20,6 @@ map("n", "<leader>w<Right>", "<c-w>l", { silent = false })
 map("n", "<leader><Up>", "<c-w>k", { silent = false })
 map("n", "<leader><Down>", "<c-w>j", { silent = false })
 
-map("n", "<leader>d", "<cmd>Bdelete<CR>")
-map("n", "<leader>bd", "<cmd>Bdelete<CR>")
+map("n", "<leader>d", "<cmd>lua require('bufdelete').bufdelete(0)<CR>")
+map("n", "<leader>bd", "<cmd>lua require('bufdelete').bufdelete(0)<CR>")
 map("n", "<leader>bn", "<cmd>tabnew<CR>")
