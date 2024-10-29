@@ -2,7 +2,7 @@ return {
   "kelly-lin/ranger.nvim",
   config = function()
     require("ranger-nvim").setup({
-      replace_netrw = true,
+      replace_netrw = false,
       ui = {
         border = "single",
         height = 0.8,
