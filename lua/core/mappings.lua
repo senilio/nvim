@@ -28,3 +28,6 @@ map("n", "sa", "<cmd>Sort<cr>", { silent = true })
 map("v", "sa", "<esc><cmd>Sort<cr>", { silent = true })
 map("n", "sd", "<cmd>Sort!<cr>", { silent = true })
 map("v", "sd", "<esc><cmd>Sort!<cr>", { silent = true })
+
+map("v", "<", "<gv", { silent = false })
+map("v", ">", ">gv", { silent = false })
