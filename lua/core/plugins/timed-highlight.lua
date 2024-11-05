@@ -5,6 +5,7 @@ local function timed_highlight_config()
 end
 
 return {
-  "sahlte/timed-highlight.nvim",
+  "senilio/timed-highlight.nvim",
+  -- "sahlte/timed-highlight.nvim", -- until fix is merged
   config = timed_highlight_config,
 }
