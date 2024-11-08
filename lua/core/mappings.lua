@@ -8,6 +8,8 @@ map("n", "YY", '"*yygv', { silent = false }) -- YANK line to system clipboard
 map("n", "XX", '"_dd', { silent = false }) -- Cut line to blackhole
 map("v", "X", '"_d', { silent = false }) -- Cut block to blackhole
 
+map("v", "p", '""p:let @"=@0<CR>', { silent = false }) -- Make paste in visual mode not yank old selection
+
 map("n", "<leader>1", "<cmd>b1<cr>", { silent = false })
 map("n", "<leader>2", "<cmd>b2<cr>", { silent = false })
 map("n", "<leader>3", "<cmd>b3<cr>", { silent = false })
