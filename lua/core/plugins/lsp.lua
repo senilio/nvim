@@ -5,7 +5,7 @@ local M = {
     "famiu/bufdelete.nvim",
   },
   config = function()
-    -- require("lspconfig").terraformls.setup({})
+    require("lspconfig").terraformls.setup({})
   end,
 }
 
