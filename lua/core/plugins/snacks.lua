@@ -18,6 +18,15 @@ local M = {
       },
     },
   },
+  keys = {
+    {
+      "<C-n>",
+      function()
+        Snacks.terminal()
+      end,
+      desc = "Toggle Terminal",
+    },
+  },
 }
 
 return M
