@@ -6,7 +6,7 @@ local M = {
     bigfile = { enabled = true },
     git = { enabled = true },
     notifier = {
-      enabled = true,
+      enabled = false,
       timeout = 1000,
     },
     quickfile = { enabled = true },
@@ -17,15 +17,7 @@ local M = {
         wo = { wrap = true }, -- Wrap notifications
       },
     },
-  },
-  keys = {
-    {
-      "<C-n>",
-      function()
-        Snacks.terminal()
-      end,
-      desc = "Toggle Terminal",
-    },
+    terminal = { enabled = true },
   },
 }
 
