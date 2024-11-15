@@ -52,8 +52,8 @@ api.nvim_create_autocmd(
   { pattern = "*", command = "set nocursorline", group = cursorGrp }
 )
 
--- Detect tpl
-api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, { pattern = { "*.tpl" }, command = "set filetype=tpl" })
+-- Detect tpl and j2
+api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, { pattern = { "*.tpl", "*.j2" }, command = "set filetype=tpl" })
 
 -- Enable spell checking for certain file types
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, { pattern = { "*.txt", "*.md" }, command = "setlocal spell" })
