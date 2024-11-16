@@ -146,13 +146,15 @@ local M = {
       { "<leader>st", "<cmd>Telescope live_grep<cr>", desc = "Text" },
       ------------------------------------------------
       { "<leader>w", group = "Window" },
-      { "<leader>w=", "<c-w>=", desc = "Equally size" },
       { "<leader>wp", "<c-w>x", desc = "Swap" },
       { "<leader>wq", "<cmd>:q<cr>", desc = "Close" },
       { "<leader>ws", "<cmd>:split<cr>", desc = "Horizontal Split" },
       { "<leader>wt", "<c-w>t", desc = "Move to new tab" },
       { "<leader>wv", "<cmd>:vsplit<cr>", desc = "Verstical Split" },
-      { "<leader>ww", "<cmd>lua require('nvim-window').pick()<cr>", desc = "Choose window to jump" },
+      { "<leader>w<Left>", "<c-w>h", desc = "Win left", hidden = true },
+      { "<leader>w<Right>", "<c-w>l", desc = "Win right", hidden = true },
+      { "<leader>w<Up>", "<c-w>k", desc = "Win up", hidden = true },
+      { "<leader>w<Down>", "<c-w>j", desc = "Win down", hidden = true },
     })
   end,
 }

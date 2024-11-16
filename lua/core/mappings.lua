@@ -19,18 +19,11 @@ map("n", "<leader>6", "<cmd>BufferLineGoToBuffer 6<cr>", { silent = false })
 map("n", "<leader><Right>", "<cmd>BufferLineCycleNext<cr>", { silent = false })
 map("n", "<leader><Left>", "<cmd>BufferLineCyclePrev<cr>", { silent = false })
 
-map("n", "<leader>w<Left>", "<c-w>h", { silent = false })
-map("n", "<leader>w<Right>", "<c-w>l", { silent = false })
-map("n", "<leader>w<Up>", "<c-w>k", { silent = false })
-map("n", "<leader>w<Down>", "<c-w>j", { silent = false })
-
 map("n", "<leader>d", "<cmd>lua Snacks.bufdelete()<CR>")
 map("n", "<leader>bd", "<cmd>lua Snacks.bufdelete()<CR>")
 map("n", "<leader>bn", "<cmd>tabnew<CR>")
 
-map("n", "sa", "<cmd>Sort<cr>", { silent = true })
 map("v", "sa", "<esc><cmd>Sort<cr>", { silent = true })
-map("n", "sd", "<cmd>Sort!<cr>", { silent = true })
 map("v", "sd", "<esc><cmd>Sort!<cr>", { silent = true })
 
 map("v", "<", "<gv", { silent = false })
