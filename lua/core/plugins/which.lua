@@ -66,14 +66,6 @@ local M = {
       { "<leader>gs", "<cmd>Telescope git_status<cr>", desc = "Open changed file" },
       { "<leader>g<Enter>", "<cmd>Neogit<cr>", desc = "Open Neogit" },
       ------------------------------------------------
-      { "<leader>h", group = "Harpoon" },
-      { "<leader>h1", "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", desc = "Open File 1" },
-      { "<leader>h2", "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", desc = "Open File 2" },
-      { "<leader>h3", "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", desc = "Open File 3" },
-      { "<leader>h4", "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", desc = "Open File 4" },
-      { "<leader>ha", "<cmd>lua require('harpoon.mark').add_file()<cr>", desc = "Add file" },
-      { "<leader>hu", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", desc = "Open Menu" },
-      ------------------------------------------------
       { "<leader>l", group = "LSP" },
       { "<leader>lA", "<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>", desc = "Add Workspace Folder" },
       { "<leader>lD", "<cmd>lua vim.lsp.buf.declaration()<cr>", desc = "Go To Declaration" },
