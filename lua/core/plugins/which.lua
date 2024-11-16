@@ -120,7 +120,7 @@ local M = {
       ------------------------------------------------
       { "<leader>w", group = "Window" },
       { "<leader>ws", "<c-w>x", desc = "Swap" },
-      { "<leader>wd", "<cmd>:q<cr>", desc = "Close" },
+      { "<leader>wq", "<cmd>:q<cr>", desc = "Close" },
       { "<leader>we", "<cmd>:split<cr>", desc = "Horizontal Split" },
       { "<leader>wt", "<c-w>t", desc = "Move to new tab" },
       { "<leader>ww", "<cmd>:vsplit<cr>", desc = "Vertical Split" },
