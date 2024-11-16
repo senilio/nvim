@@ -37,26 +37,12 @@ local M = {
         align = "center", -- align columns left, center or right
       },
       show_help = true, -- show help message on the command line when the popup is visible
-      -- triggers = {"<leader>"} -- or specify a list manually
     })
 
     local wk = require("which-key")
     default_options = { silent = true }
 
-    -- register non leader based mappings
-    wk.add({
-      { "ga", "<Plug>(EasyAlign)", desc = "Align", mode = "x" },
-      { "sF", desc = "Find left surrounding" },
-      { "sa", desc = "Add surrounding" },
-      { "sd", desc = "Delete surrounding" },
-      { "sf", desc = "Replace right surrounding" },
-      { "sh", desc = "Highlight surrounding" },
-      { "sr", desc = "Replace surrounding" },
-      { "ss", "<Plug>Lightspeed_s", desc = "Search 2-character forward" },
-      { "st", "<cmd>lua require('tsht').nodes()<cr>", desc = "TS hint textobject" },
-    })
-
-    -- Register all leader based mappings
+    -- Register leader based mappings
     wk.add({
       { "<leader>1", hidden = true },
       { "<leader>2", hidden = true },
@@ -64,8 +50,8 @@ local M = {
       { "<leader>4", hidden = true },
       { "<leader>5", hidden = true },
       { "<leader>6", hidden = true },
-      -- { "<leader><Left>", hidden = true },
-      -- { "<leader><Right>", hidden = true },
+      { "<leader><Left>", hidden = true },
+      { "<leader><Right>", hidden = true },
       { "<leader>f", group = "Files" },
       { "<leader>fb", "<cmd>Telescope file_browser<cr>", desc = "File browser" },
       { "<leader>ff", "<cmd>lua require'telescope.builtin'.find_files()<cr>", desc = "Find File" },
@@ -93,11 +79,6 @@ local M = {
       { "<leader>lD", "<cmd>lua vim.lsp.buf.declaration()<cr>", desc = "Go To Declaration" },
       { "<leader>lI", "<cmd>lua vim.lsp.buf.implementation()<cr>", desc = "Show implementations" },
       { "<leader>lK", "<cmd>lua vim.lsp.buf.hover()<cr>", desc = "Hover Commands" },
-      {
-        "<leader>lL",
-        "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>",
-        desc = "List Workspace Folders",
-      },
       { "<leader>lR", "<cmd>lua vim.lsp.buf.rename()<cr>", desc = "Rename" },
       { "<leader>lS", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Workspace Symbols" },
       { "<leader>lW", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<cr>", desc = "Remove Workspace Folder" },
@@ -117,19 +98,11 @@ local M = {
       { "<leader>lw", "<cmd>Telescope diagnostics<cr>", desc = "Workspace Diagnostics" },
       ------------------------------------------------
       { "<leader>m", group = "Misc" },
-      {
-        "<leader>ma",
-        "<cmd>lua require'telegraph'.telegraph({cmd='gitui', how='tmux_popup'})<cr>",
-        desc = "Test Telegraph",
-      },
       { "<leader>mf", "<cmd>set eventignore=BufWritePre<cr>", desc = "Disable Auto Format" },
       { "<leader>ml", "<cmd>Lazy<cr>", desc = "Open Lazy GUI" },
-      { "<leader>ms", "<cmd>SymbolsOutline<cr>", desc = "Toggle SymbolsOutline" },
-      { "<leader>mt", "<cmd>FloatermNew --autoclose=2<cr>", desc = "New Floaterm" },
-      { "<leader>mz", "<cmd>ZenMode<cr>", desc = "Toggle ZenMode" },
+      ------------------------------------------------
       { "<leader>s", group = "Search" },
       { "<leader>sC", "<cmd>Telescope colorscheme<cr>", desc = "Colorscheme" },
-      { "<leader>sH", "<cmd>Telescope heading<cr>", desc = "Find Header" },
       { "<leader>sM", "<cmd>Telescope man_pages<cr>", desc = "Man Pages" },
       {
         "<leader>sP",
@@ -146,11 +119,11 @@ local M = {
       { "<leader>st", "<cmd>Telescope live_grep<cr>", desc = "Text" },
       ------------------------------------------------
       { "<leader>w", group = "Window" },
-      { "<leader>wp", "<c-w>x", desc = "Swap" },
-      { "<leader>wq", "<cmd>:q<cr>", desc = "Close" },
-      { "<leader>ws", "<cmd>:split<cr>", desc = "Horizontal Split" },
+      { "<leader>ws", "<c-w>x", desc = "Swap" },
+      { "<leader>wd", "<cmd>:q<cr>", desc = "Close" },
+      { "<leader>we", "<cmd>:split<cr>", desc = "Horizontal Split" },
       { "<leader>wt", "<c-w>t", desc = "Move to new tab" },
-      { "<leader>wv", "<cmd>:vsplit<cr>", desc = "Verstical Split" },
+      { "<leader>ww", "<cmd>:vsplit<cr>", desc = "Vertical Split" },
       { "<leader>w<Left>", "<c-w>h", desc = "Win left", hidden = true },
       { "<leader>w<Right>", "<c-w>l", desc = "Win right", hidden = true },
       { "<leader>w<Up>", "<c-w>k", desc = "Win up", hidden = true },

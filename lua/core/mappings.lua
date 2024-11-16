@@ -23,8 +23,8 @@ map("n", "<leader>d", "<cmd>lua Snacks.bufdelete()<CR>")
 map("n", "<leader>bd", "<cmd>lua Snacks.bufdelete()<CR>")
 map("n", "<leader>bn", "<cmd>tabnew<CR>")
 
-map("v", "sa", "<esc><cmd>Sort<cr>", { silent = true })
-map("v", "sd", "<esc><cmd>Sort!<cr>", { silent = true })
+map("v", "<leader>sa", "<esc><cmd>Sort<cr>", { silent = true })
+map("v", "<leader>sd", "<esc><cmd>Sort!<cr>", { silent = true })
 
 map("v", "<", "<gv", { silent = false })
 map("v", ">", ">gv", { silent = false })
