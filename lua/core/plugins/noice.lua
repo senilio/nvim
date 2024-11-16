@@ -204,7 +204,7 @@ function M.config()
 
   require("notify").setup({
     render = "default",
-    timeout = 500,
+    timeout = 2000,
     stages = "static",
   })
 end

@@ -10,19 +10,19 @@ map("v", "X", '"_d', { silent = false }) -- Cut block to blackhole
 
 map("v", "p", '""p:let @"=@0<CR>', { silent = false }) -- Make paste in visual mode not yank old selection
 
-map("n", "<leader>1", "<cmd>b1<cr>", { silent = false })
-map("n", "<leader>2", "<cmd>b2<cr>", { silent = false })
-map("n", "<leader>3", "<cmd>b3<cr>", { silent = false })
-map("n", "<leader>4", "<cmd>b4<cr>", { silent = false })
-map("n", "<leader>5", "<cmd>b5<cr>", { silent = false })
-map("n", "<leader>6", "<cmd>b6<cr>", { silent = false })
-map("n", "<leader><Right>", "<cmd>bnext<cr>", { silent = false })
-map("n", "<leader><Left>", "<cmd>bprev<cr>", { silent = false })
+map("n", "<leader>1", "<cmd>BufferLineGoToBuffer 1<cr>", { silent = false })
+map("n", "<leader>2", "<cmd>BufferLineGoToBuffer 2<cr>", { silent = false })
+map("n", "<leader>3", "<cmd>BufferLineGoToBuffer 3<cr>", { silent = false })
+map("n", "<leader>4", "<cmd>BufferLineGoToBuffer 4<cr>", { silent = false })
+map("n", "<leader>5", "<cmd>BufferLineGoToBuffer 5<cr>", { silent = false })
+map("n", "<leader>6", "<cmd>BufferLineGoToBuffer 6<cr>", { silent = false })
+map("n", "<leader><Right>", "<cmd>BufferLineCycleNext<cr>", { silent = false })
+map("n", "<leader><Left>", "<cmd>BufferLineCyclePrev<cr>", { silent = false })
 
 map("n", "<leader>w<Left>", "<c-w>h", { silent = false })
 map("n", "<leader>w<Right>", "<c-w>l", { silent = false })
-map("n", "<leader><Up>", "<c-w>k", { silent = false })
-map("n", "<leader><Down>", "<c-w>j", { silent = false })
+map("n", "<leader>w<Up>", "<c-w>k", { silent = false })
+map("n", "<leader>w<Down>", "<c-w>j", { silent = false })
 
 map("n", "<leader>d", "<cmd>lua Snacks.bufdelete()<CR>")
 map("n", "<leader>bd", "<cmd>lua Snacks.bufdelete()<CR>")
