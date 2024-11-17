@@ -22,11 +22,10 @@ local M = {
         typst = { "typstfmt" },
         yaml = { "prettier" },
       },
-      format_on_save = {
-        -- These options will be passed to conform.format()
-        timeout_ms = 1000,
+      format_after_save = {
         lsp_fallback = true,
       },
+      notify_on_error = true,
     })
   end,
 }
