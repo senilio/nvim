@@ -90,7 +90,7 @@ local M = {
       { "<leader>lw", "<cmd>Telescope diagnostics<cr>", desc = "Workspace Diagnostics" },
       ------------------------------------------------
       { "<leader>m", group = "Misc" },
-      { "<leader>mf", "<cmd>set eventignore=BufWritePre<cr>", desc = "Disable Auto Format" },
+      { "<leader>mf", "<cmd>FormatToggle<cr>", desc = "Toggle format-on-save" },
       { "<leader>ml", "<cmd>Lazy<cr>", desc = "Open Lazy GUI" },
       ------------------------------------------------
       { "<leader>s", group = "Search" },
