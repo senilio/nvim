@@ -17,6 +17,7 @@ local M = {
           enabled_providers = { "lsp", "path", "snippets", "buffer" },
         },
       },
+      servers = { "tflint" },
     },
     opts_extend = { "sources.completion.enabled_providers" },
   },
