@@ -10,6 +10,7 @@ local M = {
         shfmt = { prepend_args = { "-i", "0" } },
       },
       formatters_by_ft = {
+        fish = { "fish_indent" },
         go = { "goimports", "gofmt" },
         javascript = { "prettier" },
         json = { "prettier" },
