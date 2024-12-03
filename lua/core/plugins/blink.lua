@@ -6,7 +6,7 @@ local M = {
     version = "v0.*",
     opts = {
       keymap = {
-        preset = "enter",
+        preset = "super-tab",
       },
       highlight = {
         use_nvim_cmp_as_default = true,
@@ -17,7 +17,7 @@ local M = {
           enabled_providers = { "lsp", "path", "snippets", "buffer" },
         },
       },
-      servers = { "tflint" },
+      servers = { "terraform-ls" },
     },
     opts_extend = { "sources.completion.enabled_providers" },
   },
