@@ -17,7 +17,7 @@ local M = {
           enabled_providers = { "lsp", "path", "snippets", "buffer" },
         },
       },
-      servers = { "terraform-ls" },
+      servers = {},
     },
     opts_extend = { "sources.completion.enabled_providers" },
   },
