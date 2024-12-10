@@ -15,7 +15,7 @@ return {
       -- `<CR>`, `'` does not insert pair after a letter.
       -- Only parts of tables can be tweaked (others will use these defaults).
       mappings = {
-        ["("] = { action = "open", pair = "()", neigh_pattern = "[^\\]." },
+        ["("] = { action = "open", pair = "()", neigh_pattern = "[^\\][%s]" },
         ["["] = { action = "open", pair = "[]", neigh_pattern = "[^\\]." },
         ["{"] = { action = "open", pair = "{}", neigh_pattern = "[^\\]." },
 
