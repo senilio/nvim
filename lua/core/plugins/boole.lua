@@ -3,8 +3,8 @@ local M = {
   config = function()
     require("boole").setup({
       mappings = {
-        increment = "<D-Up>",
-        decrement = "<D-Down>",
+        increment = "<M-Up>",
+        decrement = "<M-Down>",
       },
       -- User defined loops
       additions = {},
