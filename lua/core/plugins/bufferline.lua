@@ -14,6 +14,12 @@ local M = {
           fg = "#eeeeee",
           bg = "#1b1b1b",
         },
+        indicator_selected = {
+          bg = "#1b1b1b",
+        },
+        fill = {
+          bg = "#000000",
+        },
       },
       options = {
         indicator = { icon = "", style = "none" },
@@ -24,10 +30,12 @@ local M = {
         -- buffer_close_icon = "",
         modified_icon = "●",
         close_icon = "",
+        truncate_names = false,
         left_trunc_marker = "",
         right_trunc_marker = "",
         max_name_length = 18,
         max_prefix_length = 8, -- prefix used when a buffer is de-duplicated
+        show_duplicate_prefix = false,
         tab_size = 1,
         diagnostics = "nvim_lsp",
         diagnostics_indicator = function(count, level)
