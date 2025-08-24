@@ -8,6 +8,11 @@ local M = {
       formatters = {
         prettier = { extra_args = { "--single-quote", "false" } },
         shfmt = { prepend_args = { "-i", "0" } },
+        stylua = {
+          inherit = false,
+          command = "stylua",
+          args = { "--search-parent-directories", "--stdin-filepath", "$FILENAME", "-" },
+        },
       },
       formatters_by_ft = {
         fish = { "fish_indent" },
