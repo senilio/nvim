@@ -4,7 +4,7 @@ expr_options = { expr = true, silent = true }
 
 --Custom mappings
 map("v", "Y", '"*ygv', { silent = false }) -- YANK visual block to system clipboard
-map("n", "YY", '"*yygv', { silent = false }) -- YANK line to system clipboard
+map("n", "YY", '"*yy', { silent = false }) -- YANK line to system clipboard
 map("n", "XX", '"_dd', { silent = false }) -- Cut line to blackhole
 map("v", "X", '"_d', { silent = false }) -- Cut block to blackhole
 
