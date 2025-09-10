@@ -4,7 +4,6 @@ local tools = {
   "prettier",
   "stylua",
   "shfmt",
-  "rustfmt",
   "latexindent",
   -- Linter
   "eslint_d",
