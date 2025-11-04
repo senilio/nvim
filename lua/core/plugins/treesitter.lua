@@ -17,6 +17,7 @@ local M = {
         "fish",
         "go",
         "hcl",
+        "helm",
         "html",
         "java",
         "javascript",

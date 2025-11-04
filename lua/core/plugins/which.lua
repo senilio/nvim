@@ -66,6 +66,9 @@ local M = {
       { "<leader>gs", "<cmd>Telescope git_status<cr>", desc = "Open changed file" },
       { "<leader>g<Enter>", "<cmd>Neogit<cr>", desc = "Open Neogit" },
       ------------------------------------------------
+      { "<leader>k", group = "kubectl" },
+      { "<leader>ka", "<cmd>Kubectl apply<cr>", desc = "Apply current file in active context" },
+      ------------------------------------------------
       { "<leader>l", group = "LSP" },
       { "<leader>lA", "<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>", desc = "Add Workspace Folder" },
       { "<leader>lD", "<cmd>lua vim.lsp.buf.declaration()<cr>", desc = "Go To Declaration" },

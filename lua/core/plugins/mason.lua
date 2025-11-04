@@ -14,6 +14,7 @@ local tools = {
   -- DAP
   "debugpy",
   "codelldb",
+  "helm-ls",
 }
 
 local M = {
