@@ -1,6 +1,6 @@
 return {
   "echasnovski/mini.files",
-  enabled = true,
+  enabled = false,
   version = false,
   config = function()
     require("mini.files").setup({
@@ -32,9 +32,8 @@ return {
         -- Whether to delete permanently or move into module-specific trash
         permanent_delete = true,
         -- Whether to use for editing directories
-        use_as_default_explorer = true,
+        use_as_default_explorer = false,
       },
-
       -- Customization of explorer windows
       windows = {
         -- Maximum number of windows to show side by side

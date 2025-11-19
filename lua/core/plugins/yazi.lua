@@ -25,7 +25,7 @@ local M = {
   ---@type YaziConfig
   opts = {
     floating_window_scaling_factor = 0.90,
-    open_for_directories = false,
+    open_for_directories = true,
     yazi_floating_window_border = "single",
     hooks = {
       yazi_opened_multiple_files = function(chosen_files, config, state)
@@ -37,6 +37,12 @@ local M = {
       end,
     },
   },
+  init = function()
+    -- mark netrw as loaded so it's not loaded at all.
+    --
+    -- More details: https://github.com/mikavilpas/yazi.nvim/issues/802
+    vim.g.loaded_netrwPlugin = 1
+  end,
 }
 
 return M
