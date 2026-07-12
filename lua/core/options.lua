@@ -18,7 +18,6 @@ o.conceallevel = 0 -- so that `` is visible in markdown files
 o.cursorline = true -- highlight the current line
 o.dir = fn.stdpath("data") .. "/swp" -- swap file directory
 o.expandtab = false -- convert tabs to spaces
-o.fileencoding = "utf-8" -- the encoding written to a file
 o.foldenable = false -- disable folding; enable with zi
 o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 o.foldmethod = "expr"
