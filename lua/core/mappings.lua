@@ -1,6 +1,6 @@
 local map = vim.keymap.set
-default_options = { silent = true }
-expr_options = { expr = true, silent = true }
+local default_options = { silent = true }
+local expr_options = { expr = true, silent = true }
 
 --Custom mappings
 map("v", "Y", '"+ygv', { silent = false }) -- YANK visual block to system clipboard

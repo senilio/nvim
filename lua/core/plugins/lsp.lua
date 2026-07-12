@@ -44,11 +44,11 @@ return {
         },
         lua_ls = {
           settings = {
-            format = {
-              enable = false, -- let conform handle the formatting
-            },
             telemetry = { enable = false },
             Lua = {
+              format = {
+                enable = false, -- let conform handle the formatting
+              },
               workspace = {
                 checkThirdParty = false,
                 library = {

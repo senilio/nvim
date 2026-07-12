@@ -1,4 +1,6 @@
-local config = {
+return {
+  "brenoprata10/nvim-highlight-colors",
+  event = { "BufReadPre", "BufNewFile" },
   enabled = true,
   opts = {},
   keys = {
@@ -10,12 +12,4 @@ local config = {
       desc = "Toggle highlight-colors",
     },
   },
-}
-
-return {
-  "brenoprata10/nvim-highlight-colors",
-  event = { "BufReadPre", "BufNewFile" },
-  enabled = config.enabled,
-  opts = config.opts,
-  keys = config.keys,
 }

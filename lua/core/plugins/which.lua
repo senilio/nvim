@@ -1,6 +1,7 @@
-local M = {
+return {
   "folke/which-key.nvim",
   dependencies = { "echasnovski/mini.icons" },
+  event = "VeryLazy",
   config = function()
     require("which-key").setup({
       plugins = {
@@ -40,7 +41,7 @@ local M = {
     })
 
     local wk = require("which-key")
-    default_options = { silent = true }
+    local default_options = { silent = true }
 
     -- Register leader based mappings
     wk.add({
@@ -53,21 +54,16 @@ local M = {
       { "<leader><Left>", hidden = true },
       { "<leader><Right>", hidden = true },
       { "<leader>f", group = "Files" },
-      { "<leader>fb", "<cmd>Telescope file_browser<cr>", desc = "File browser" },
       { "<leader>ff", "<cmd>lua require'telescope.builtin'.find_files()<cr>", desc = "Find File" },
-      { "<leader>fm", "<cmd>lua MiniFiles.open()<CR>", desc = "Open mini-files" },
       { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Open Recent File" },
       ------------------------------------------------
       { "<leader>g", group = "Git" },
       { "<leader>gC", "<cmd>Telescope git_bcommits<cr>", desc = "Checkout commit(for current file)" },
       { "<leader>gR", "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", desc = "Reset Buffer" },
-      { "<leader>gb", "<cmd>Gitsigns toggle_current_line_blame<cr>", desc = "Toogle Blame" },
+      { "<leader>gb", "<cmd>Gitsigns toggle_current_line_blame<cr>", desc = "Toggle Blame" },
       { "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Checkout commit" },
       { "<leader>gs", "<cmd>Telescope git_status<cr>", desc = "Open changed file" },
       { "<leader>g<Enter>", "<cmd>Neogit<cr>", desc = "Open Neogit" },
-      ------------------------------------------------
-      { "<leader>k", group = "kubectl" },
-      { "<leader>ka", "<cmd>Kubectl apply<cr>", desc = "Apply current file in active context" },
       ------------------------------------------------
       { "<leader>l", group = "LSP" },
       { "<leader>lA", "<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>", desc = "Add Workspace Folder" },
@@ -80,7 +76,7 @@ local M = {
       { "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action" },
       { "<leader>ld", "<cmd>lua vim.lsp.buf.definition()<cr>", desc = "Go To Definition" },
       { "<leader>le", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Document Diagnostics" },
-      { "<leader>lf", "<cmd>lua vim.lsp.buf.formatting()<cr>", desc = "Format" },
+      { "<leader>lf", "<cmd>lua vim.lsp.buf.format()<cr>", desc = "Format" },
       { "<leader>li", "<cmd>LspInfo<cr>", desc = "Connected Language Servers" },
       { "<leader>lk", "<cmd>lua vim.lsp.buf.signature_help()<cr>", desc = "Signature Help" },
       { "<leader>ll", "<cmd>lua vim.diagnostic.open_float()<CR>", desc = "Line diagnostics" },
@@ -94,7 +90,7 @@ local M = {
       ------------------------------------------------
       { "<leader>m", group = "Misc" },
       { "<leader>mf", "<cmd>FormatToggle<cr>", desc = "Toggle format-on-save" },
-      { "<leader>ml", "<cmd>Lazy<cr>", desc = "Open Lazy GUI" },
+      { "<leader>ml", "<cmd>ZShow<cr>", desc = "Open zshow" },
       ------------------------------------------------
       { "<leader>s", group = "Search" },
       { "<leader>sC", "<cmd>Telescope colorscheme<cr>", desc = "Colorscheme" },
@@ -126,5 +122,3 @@ local M = {
     })
   end,
 }
-
-return M

@@ -1,9 +1,9 @@
-local M = {
+return {
   "mikavilpas/yazi.nvim",
   dependencies = {
     "nvim-lua/plenary.nvim",
   },
-  event = "VeryLazy",
+  lazy = false,
   keys = {
     -- 👇 in this section, choose your own keymappings!
     {
@@ -28,21 +28,13 @@ local M = {
     open_for_directories = true,
     yazi_floating_window_border = "single",
     hooks = {
-      yazi_opened_multiple_files = function(chosen_files, config, state)
+      yazi_opened_multiple_files = function(chosen_files)
         -- Iterate over the selected files
         for _, file in ipairs(chosen_files) do
           -- Open each file in a new buffer
-          vim.api.nvim_command("e " .. file)
+          vim.cmd.edit(vim.fn.fnameescape(file))
         end
       end,
     },
   },
-  init = function()
-    -- mark netrw as loaded so it's not loaded at all.
-    --
-    -- More details: https://github.com/mikavilpas/yazi.nvim/issues/802
-    vim.g.loaded_netrwPlugin = 1
-  end,
 }
-
-return M

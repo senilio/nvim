@@ -1,8 +1,6 @@
-local M = {
+return {
   "folke/trouble.nvim",
   priority = 1000,
-  lazy = false,
+  cmd = "Trouble",
   opts = {},
 }
-
-return M

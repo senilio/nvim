@@ -1,6 +1,6 @@
-local M = {
+return {
   "akinsho/nvim-bufferline.lua",
-  dependencies = "kyazdani42/nvim-web-devicons",
+  dependencies = "nvim-tree/nvim-web-devicons",
   enabled = true,
   event = "BufReadPre",
   config = function()
@@ -42,31 +42,6 @@ local M = {
           local icon = level:match("error") and " " or " "
           return " " .. icon .. count
         end,
-        -- NOTE: this will be called a lot so don't do any heavy processing here
-        custom_filter = function(buf_number)
-          -- filter out filetypes you don't want to see
-          if vim.bo[buf_number].filetype ~= "<i-dont-want-to-see-this>" then
-            return true
-          end
-          -- filter out by buffer name
-          if vim.fn.bufname(buf_number) ~= "No Name" then
-            return true
-          end
-          -- filter out based on arbitrary rules
-          -- e.g. filter out vim wiki buffer from tabline in your work repo
-          if vim.fn.getcwd() == "<work-repo>" and vim.bo[buf_number].filetype ~= "wiki" then
-            return true
-          end
-        end,
-        offsets = {
-          {
-            filetype = "NvimTree",
-            text = "  File Explorer",
-            highlight = "Directory",
-            text_align = "left",
-            padding = 0,
-          },
-        },
         show_buffer_icons = true, -- disable filetype icons for buffers
         show_buffer_close_icons = false,
         show_close_icon = false,
@@ -83,5 +58,3 @@ local M = {
   end,
   -- vim.cmd("highlight GhBlue ctermfg=75 guifg=#6bb7fa")
 }
-
-return M

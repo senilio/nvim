@@ -1,7 +1,25 @@
-local M = {
+-- Command for toggling format on save
+vim.api.nvim_create_user_command("FormatToggle", function()
+  local fmt
+  if vim.g.disable_autoformat then
+    vim.b.disable_autoformat = false
+    vim.g.disable_autoformat = false
+    fmt = "enabled"
+  else
+    vim.b.disable_autoformat = true
+    vim.g.disable_autoformat = true
+    fmt = "disabled"
+  end
+  require("notify")("Format-on-save " .. fmt)
+end, {
+  desc = "Toggle autoformat-on-save",
+})
+
+return {
   "stevearc/conform.nvim",
   enabled = true,
-  -- event = { "BufWritePre" },
+  event = { "BufWritePre" },
+  cmd = { "ConformInfo" },
   -- disable_autoformat = false,
   config = function()
     require("conform").setup({
@@ -32,26 +50,8 @@ local M = {
         if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
           return
         end
-        return { lsp_fallback = true }
+        return { lsp_format = "fallback" }
       end,
     })
   end,
 }
-
--- Command for toggling format on save
-vim.api.nvim_create_user_command("FormatToggle", function(bufnr)
-  if vim.g.disable_autoformat then
-    vim.b.disable_autoformat = false
-    vim.g.disable_autoformat = false
-    fmt = "enabled"
-  else
-    vim.b.disable_autoformat = true
-    vim.g.disable_autoformat = true
-    fmt = "disabled"
-  end
-  require("notify")("Format-on-save " .. fmt)
-end, {
-  desc = "Toggle autoformat-on-save",
-})
-
-return M

@@ -2,7 +2,12 @@ local o = vim.opt
 local wo = vim.wo
 local fn = vim.fn
 
-vim.cmd("set inccommand=split")
+-- disable builtin dir browser before plugins load
+vim.g.loaded_nvim_dir_plugin = 1
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+o.inccommand = "split"
 
 -- o.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
 o.background = "dark"
@@ -15,7 +20,7 @@ o.dir = fn.stdpath("data") .. "/swp" -- swap file directory
 o.expandtab = false -- convert tabs to spaces
 o.fileencoding = "utf-8" -- the encoding written to a file
 o.foldenable = false -- disable folding; enable with zi
-o.foldexpr = "nvim_treesitter#foldexpr()"
+o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 o.foldmethod = "expr"
 o.grepprg = "rg --hidden --vimgrep --smart-case --"
 o.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50" -- block in normal and beam cursor in insert mode
@@ -66,5 +71,9 @@ o.wildignore = [[
 vim.cmd("highlight Normal guibg=#000000")
 vim.cmd("highlight NotifyBackground guibg=#000000")
 vim.cmd("colorscheme github_dark")
-vim.cmd([[silent! autocmd! filetypedetect BufRead,BufNewFile *.tf]])
-vim.cmd([[autocmd BufRead,BufNewFile *.tf,*.tfvars set filetype=terraform]])
+vim.filetype.add({
+  extension = {
+    tf = "terraform",
+    tfvars = "terraform",
+  },
+})

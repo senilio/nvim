@@ -1,5 +1,5 @@
 -- References to ./lua/
-require("core.lazy")
+require("core.pack")
 require("core.mappings")
 require("core.options")
 require("core.autocmd")

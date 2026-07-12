@@ -1,5 +1,6 @@
-local M = {
+return {
   "s1n7ax/nvim-window-picker",
+  event = "VeryLazy",
   opts = {
     filter_rules = {
       -- filter using buffer options
@@ -20,5 +21,3 @@ local M = {
     },
   },
 }
-
-return M

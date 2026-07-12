@@ -1,24 +1,60 @@
 local api = vim.api
 
---- Remove all trailing whitespace on save
+--- Remove trailing whitespace and blank lines on save
 local TrimWhiteSpaceGrp = api.nvim_create_augroup("TrimWhiteSpaceGrp", { clear = true })
 api.nvim_create_autocmd("BufWritePre", {
-  command = [[:%s/\s\+$//e]],
   group = TrimWhiteSpaceGrp,
-})
-api.nvim_create_autocmd("BufWritePre", {
-  command = [[:%s#\($\n\s*\)\+\%$##e]],
-  group = TrimWhiteSpaceGrp,
+  callback = function(ev)
+    local buf = ev.buf
+    if not vim.bo[buf].modifiable or vim.bo[buf].buftype ~= "" then
+      return
+    end
+
+    local line_count = api.nvim_buf_line_count(buf)
+    local last_line = api.nvim_buf_get_lines(buf, line_count - 1, line_count, false)[1]
+    local trim_end = last_line:match("^%s*$") and line_count > 1
+
+    local view = vim.fn.winsaveview()
+    local markdown = vim.bo[buf].filetype == "markdown"
+    local lnum = 1
+    while lnum <= line_count do
+      vim.fn.cursor(lnum, 0)
+      lnum = vim.fn.search([[[ \t]\+$]], "Wc")
+      if lnum == 0 then
+        break
+      end
+
+      local line = api.nvim_buf_get_lines(buf, lnum - 1, lnum, false)[1]
+      local trimmed = line:gsub("[ \t]+$", function(space)
+        local slashes = line:sub(1, #line - #space):match("\\+$")
+        if markdown and slashes and #slashes % 2 == 1 and #space == 1 then
+          return space
+        end
+        if markdown and line:match("%S") and #space >= 2 and space:match("^ +$") then
+          return "  "
+        end
+        return ""
+      end)
+      if trimmed ~= line then
+        api.nvim_buf_set_lines(buf, lnum - 1, lnum, false, { trimmed })
+      end
+      lnum = lnum + 1
+    end
+
+    while line_count > 1 do
+      last_line = api.nvim_buf_get_lines(buf, line_count - 1, line_count, false)[1]
+      if not last_line:match("^%s*$") then
+        break
+      end
+      api.nvim_buf_set_lines(buf, line_count - 1, line_count, false, {})
+      line_count = line_count - 1
+    end
+    vim.fn.winrestview(view)
+  end,
 })
 
 -- don't auto comment new line
 api.nvim_create_autocmd("BufEnter", { command = [[set formatoptions-=cro]] })
-
--- Close nvim if NvimTree is only running buffer
-api.nvim_create_autocmd(
-  "BufEnter",
-  { command = [[if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif]] }
-)
 
 -- Highlight on yank
 local yankGrp = api.nvim_create_augroup("YankHighlight", { clear = true })

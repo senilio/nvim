@@ -7,5 +7,6 @@ end
 return {
   "senilio/timed-highlight.nvim",
   -- "sahlte/timed-highlight.nvim", -- until fix is merged
+  event = "VeryLazy",
   config = timed_highlight_config,
 }

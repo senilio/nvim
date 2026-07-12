@@ -1,4 +1,4 @@
-local M = {
+return {
   {
     "saghen/blink.cmp",
     enabled = function()
@@ -8,7 +8,7 @@ local M = {
     end,
     lazy = false, -- lazy loading handled internally
     dependencies = "rafamadriz/friendly-snippets",
-    version = "*",
+    sem_version = "*",
     opts = {
       keymap = { preset = "super-tab" },
       appearance = {
@@ -21,17 +21,4 @@ local M = {
     },
     opts_extend = { "sources.default" },
   },
-  {
-    "neovim/nvim-lspconfig",
-    dependencies = { "saghen/blink.cmp" },
-    config = function(_, opts)
-      local lspconfig = require("lspconfig")
-      for server, config in pairs(opts.servers or {}) do
-        config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
-        lspconfig[server].setup(config)
-      end
-    end,
-  },
 }
-
-return M

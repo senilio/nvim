@@ -2,6 +2,15 @@ return {
   "echasnovski/mini.surround",
   enabled = true,
   version = false,
+  keys = {
+    { "sa", mode = { "n", "x" } },
+    { "sd" },
+    { "sf" },
+    { "sF" },
+    { "sh" },
+    { "sr" },
+    { "sn" },
+  },
   config = function()
     require("mini.surround").setup({
       -- No need to copy this inside `setup()`. Will be used automatically.

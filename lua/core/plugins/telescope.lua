@@ -1,4 +1,4 @@
-local M = {
+return {
 
   "nvim-telescope/telescope.nvim",
   cmd = "Telescope",
@@ -7,7 +7,6 @@ local M = {
     "jvgrootveld/telescope-zoxide",
     "crispgm/telescope-heading.nvim",
     "nvim-telescope/telescope-symbols.nvim",
-    "nvim-telescope/telescope-file-browser.nvim",
     "ptethng/telescope-makefile",
     -- { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
   },
@@ -17,23 +16,6 @@ local M = {
     local action_layout = require("telescope.actions.layout")
 
     telescope.setup({
-      extensions = {
-        file_browser = {
-          theme = "ivy",
-          previewer = true,
-          -- disables netrw and use telescope-file-browser in its place
-          hijack_netrw = true,
-          hidden = true,
-          mappings = {
-            ["i"] = {
-              -- your custom insert mode mappings
-            },
-            ["n"] = {
-              -- your custom normal mode mappings
-            },
-          },
-        },
-      },
       pickers = {
         find_files = {
           hidden = true,
@@ -91,8 +73,6 @@ local M = {
           --[[ "--line-number",
           "--column", ]]
           "--smart-case",
-          "--no-ignore",
-          "--hidden",
           "--trim",
         },
         mappings = {
@@ -152,12 +132,9 @@ local M = {
       },
     })
 
-    telescope.load_extension("file_browser")
     telescope.load_extension("noice")
     -- telescope.load_extension("fzf")
     telescope.load_extension("zoxide")
     telescope.load_extension("heading")
   end,
 }
-
-return M

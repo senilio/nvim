@@ -1,5 +1,9 @@
-local M = {
+return {
   "nat-418/boole.nvim",
+  keys = {
+    { "<M-Up>" },
+    { "<M-Down>" },
+  },
   config = function()
     require("boole").setup({
       mappings = {
@@ -16,5 +20,3 @@ local M = {
     })
   end,
 }
-
-return M
