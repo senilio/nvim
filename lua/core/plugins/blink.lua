@@ -1,15 +1,15 @@
 return {
   {
     "saghen/blink.cmp",
-    enabled = function()
-      return not vim.tbl_contains({ "lua", "markdown" }, vim.bo.filetype)
-        and vim.bo.buftype ~= "prompt"
-        and vim.b.completion ~= false
-    end,
     lazy = false, -- lazy loading handled internally
     dependencies = "rafamadriz/friendly-snippets",
     sem_version = "*",
     opts = {
+      enabled = function()
+        return not vim.tbl_contains({ "lua", "markdown" }, vim.bo.filetype)
+          and vim.bo.buftype ~= "prompt"
+          and vim.b.completion ~= false
+      end,
       keymap = { preset = "super-tab" },
       appearance = {
         use_nvim_cmp_as_default = true,

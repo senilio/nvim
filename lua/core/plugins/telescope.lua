@@ -7,8 +7,6 @@ return {
     "jvgrootveld/telescope-zoxide",
     "crispgm/telescope-heading.nvim",
     "nvim-telescope/telescope-symbols.nvim",
-    "ptethng/telescope-makefile",
-    -- { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
   },
   config = function()
     local telescope = require("telescope")
@@ -70,8 +68,8 @@ return {
           "--color=never",
           "--no-heading",
           "--with-filename",
-          --[[ "--line-number",
-          "--column", ]]
+          "--line-number",
+          "--column",
           "--smart-case",
           "--trim",
         },

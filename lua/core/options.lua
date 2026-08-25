@@ -54,22 +54,26 @@ o.wildignorecase = true -- When set case is ignored when completing file names a
 o.wildmenu = true
 o.wildmode = "full"
 wo.colorcolumn = "99999"
-o.wildignore = [[
-.git,.hg,.svn
-*.aux,*.out,*.toc
-*.o,*.obj,*.exe,*.dll,*.manifest,*.rbc,*.class
-*.ai,*.bmp,*.gif,*.ico,*.jpg,*.jpeg,*.png,*.psd,*.webp
-*.avi,*.divx,*.mp4,*.webm,*.mov,*.m2ts,*.mkv,*.vob,*.mpg,*.mpeg
-*.mp3,*.oga,*.ogg,*.wav,*.flac
-*.eot,*.otf,*.ttf,*.woff
-*.doc,*.pdf,*.cbr,*.cbz
-*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.kgb
-*.swp,.lock,.DS_Store,._*
-*/tmp/*,*.so,*.swp,*.zip,**/node_modules/**,**/target/**,**.terraform/**
-]]
-vim.cmd("highlight Normal guibg=#000000")
-vim.cmd("highlight NotifyBackground guibg=#000000")
+o.wildignore = ([[
+.git,.hg,.svn,
+*.aux,*.out,*.toc,
+*.o,*.obj,*.exe,*.dll,*.manifest,*.rbc,*.class,
+*.ai,*.bmp,*.gif,*.ico,*.jpg,*.jpeg,*.png,*.psd,*.webp,
+*.avi,*.divx,*.mp4,*.webm,*.mov,*.m2ts,*.mkv,*.vob,*.mpg,*.mpeg,
+*.mp3,*.oga,*.ogg,*.wav,*.flac,
+*.eot,*.otf,*.ttf,*.woff,
+*.doc,*.pdf,*.cbr,*.cbz,
+*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.kgb,
+*.swp,.lock,.DS_Store,._*,
+*/tmp/*,*.so,*.swp,*.zip,**/node_modules/**,**/target/**,**.terraform/**,
+]]):gsub("\n", "")
+local function apply_bg_overrides()
+  vim.cmd("highlight Normal guibg=#000000")
+  vim.cmd("highlight NotifyBackground guibg=#000000")
+end
 vim.cmd("colorscheme github_dark")
+apply_bg_overrides()
+vim.api.nvim_create_autocmd("ColorScheme", { callback = apply_bg_overrides })
 vim.filetype.add({
   extension = {
     tf = "terraform",
