@@ -84,14 +84,14 @@ return {
         marksman = {},
         pyright = {},
         templ = {},
-        terraformls = {
+        tinymist = {},
+        tofu_ls = {
           cmd = {
-            "terraform-ls",
+            "tofu-ls",
             "serve",
           },
-          filetypes = { "terraform", "terraform-vars", "tf" },
+          filetypes = { "terraform", "terraform-vars", "tf", "opentofu", "opentofu-vars" },
         },
-        tinymist = {},
         ts_ls = {},
         yamlls = {
           capabilities = {
