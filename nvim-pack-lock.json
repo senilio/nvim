@@ -97,18 +97,6 @@
       "rev": "4916d6592ede8c07973490d9322f187e07dfefac",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
-    "nvim-treesitter-endwise": {
-      "rev": "8fe8a95630f4f2c72a87ba1927af649e0bfaa244",
-      "src": "https://github.com/RRethy/nvim-treesitter-endwise"
-    },
-    "nvim-treesitter-textobjects": {
-      "rev": "851e865342e5a4cb1ae23d31caf6e991e1c99f1e",
-      "src": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
-    },
-    "nvim-ts-autotag": {
-      "rev": "88c1453db4ba7dd24131086fe51fdf74e587d275",
-      "src": "https://github.com/windwp/nvim-ts-autotag"
-    },
     "nvim-web-devicons": {
       "rev": "dad71387de386a946b123079d0e53f23028f3abd",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
@@ -132,10 +120,6 @@
     "telescope-heading.nvim": {
       "rev": "fb60fb08ea37849f79af21c2265cb77dc9687a20",
       "src": "https://github.com/crispgm/telescope-heading.nvim"
-    },
-    "telescope-makefile": {
-      "rev": "f35425d7d53d92a04215c3714a5819811d2842c3",
-      "src": "https://github.com/ptethng/telescope-makefile"
     },
     "telescope-symbols.nvim": {
       "rev": "a6d0127a53d39b9fc2af75bd169d288166118aec",

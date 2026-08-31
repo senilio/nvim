@@ -41,7 +41,6 @@ return {
     })
 
     local wk = require("which-key")
-    local default_options = { silent = true }
 
     -- Register leader based mappings
     wk.add({

@@ -10,21 +10,12 @@ api.nvim_create_autocmd("BufWritePre", {
       return
     end
 
-    local line_count = api.nvim_buf_line_count(buf)
-    local last_line = api.nvim_buf_get_lines(buf, line_count - 1, line_count, false)[1]
-    local trim_end = last_line:match("^%s*$") and line_count > 1
-
-    local view = vim.fn.winsaveview()
+    local current_buf = api.nvim_get_current_buf()
+    local view = current_buf == buf and vim.fn.winsaveview() or nil
     local markdown = vim.bo[buf].filetype == "markdown"
-    local lnum = 1
-    while lnum <= line_count do
-      vim.fn.cursor(lnum, 0)
-      lnum = vim.fn.search([[[ \t]\+$]], "Wc")
-      if lnum == 0 then
-        break
-      end
+    local line_count = api.nvim_buf_line_count(buf)
 
-      local line = api.nvim_buf_get_lines(buf, lnum - 1, lnum, false)[1]
+    for lnum, line in ipairs(api.nvim_buf_get_lines(buf, 0, -1, false)) do
       local trimmed = line:gsub("[ \t]+$", function(space)
         local slashes = line:sub(1, #line - #space):match("\\+$")
         if markdown and slashes and #slashes % 2 == 1 and #space == 1 then
@@ -38,23 +29,29 @@ api.nvim_create_autocmd("BufWritePre", {
       if trimmed ~= line then
         api.nvim_buf_set_lines(buf, lnum - 1, lnum, false, { trimmed })
       end
-      lnum = lnum + 1
     end
 
     while line_count > 1 do
-      last_line = api.nvim_buf_get_lines(buf, line_count - 1, line_count, false)[1]
+      local last_line = api.nvim_buf_get_lines(buf, line_count - 1, line_count, false)[1]
       if not last_line:match("^%s*$") then
         break
       end
       api.nvim_buf_set_lines(buf, line_count - 1, line_count, false, {})
       line_count = line_count - 1
     end
-    vim.fn.winrestview(view)
+    if view then
+      vim.fn.winrestview(view)
+    end
   end,
 })
 
--- don't auto comment new line
-api.nvim_create_autocmd("BufEnter", { command = [[set formatoptions-=cro]] })
+local formatOptionsGrp = api.nvim_create_augroup("FormatOptions", { clear = true })
+api.nvim_create_autocmd({ "BufEnter", "FileType" }, {
+  group = formatOptionsGrp,
+  callback = function(ev)
+    vim.bo[ev.buf].formatoptions = vim.bo[ev.buf].formatoptions:gsub("[cro]", "")
+  end,
+})
 
 -- Highlight on yank
 local yankGrp = api.nvim_create_augroup("YankHighlight", { clear = true })
@@ -103,5 +100,5 @@ api.nvim_create_autocmd("FileType", {
   callback = function(ev)
     vim.bo[ev.buf].commentstring = "# %s"
   end,
-  pattern = { "terraform", "hcl" },
+  pattern = { "terraform", "terraform-vars", "opentofu", "opentofu-vars", "hcl" },
 })

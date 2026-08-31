@@ -23,15 +23,17 @@ return {
         cursorcolumn = false, -- disable cursor column
       },
     },
-    -- callback where you can add custom code when the Zen window opens
-    on_open = function(win)
-      vim.opt["conceallevel"] = 3
-      vim.opt["concealcursor"] = "nc"
+    on_open = function()
+      vim.b.zen_mode_conceallevel = vim.opt_local.conceallevel:get()
+      vim.b.zen_mode_concealcursor = vim.opt_local.concealcursor:get()
+      vim.opt_local.conceallevel = 3
+      vim.opt_local.concealcursor = "nc"
     end,
-    -- callback where you can add custom code when the Zen window closes
     on_close = function()
-      vim.opt["conceallevel"] = 0
-      vim.opt["concealcursor"] = ""
+      vim.opt_local.conceallevel = vim.b.zen_mode_conceallevel or 0
+      vim.opt_local.concealcursor = vim.b.zen_mode_concealcursor or ""
+      vim.b.zen_mode_conceallevel = nil
+      vim.b.zen_mode_concealcursor = nil
     end,
   },
 }

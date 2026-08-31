@@ -2,10 +2,8 @@ local o = vim.opt
 local wo = vim.wo
 local fn = vim.fn
 
--- disable builtin dir browser before plugins load
-vim.g.loaded_nvim_dir_plugin = 1
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+fn.mkdir(fn.stdpath("data") .. "/swp", "p")
+fn.mkdir(fn.stdpath("data") .. "/undodir", "p")
 
 o.inccommand = "split"
 
@@ -17,7 +15,7 @@ o.completeopt = { "menu", "menuone", "noselect", "noinsert" } -- A comma separat
 o.conceallevel = 0 -- so that `` is visible in markdown files
 o.cursorline = true -- highlight the current line
 o.dir = fn.stdpath("data") .. "/swp" -- swap file directory
-o.expandtab = false -- convert tabs to spaces
+o.expandtab = false -- preserve typed tabs by default
 o.foldenable = false -- disable folding; enable with zi
 o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 o.foldmethod = "expr"
@@ -27,16 +25,16 @@ o.history = 500 -- Use the 'history' option to set the number of lines from comm
 o.hlsearch = true -- highlight all matches on previous search pattern
 o.ignorecase = true -- ignore case in search patterns
 o.laststatus = 3
-o.lazyredraw = false -- do not redraw screen while running macros
+o.lazyredraw = false
 o.listchars = "eol:¬,tab:> ,trail:~,extends:>,precedes:<,space:␣"
 o.mouse = ""
 o.number = true
 o.relativenumber = false
 o.scrolloff = 3 -- Minimal number of screen lines to keep above and below the cursor
 o.shiftwidth = 4 -- the number of spaces inserted for each indentation
-o.shortmess = o.shortmess + "I" -- prevent "pattern not found" messages
+o.shortmess = o.shortmess + "I" -- skip intro message
 o.showmode = false -- we don't need to see things like -- INSERT -- anymore
-o.showtabline = 0 -- always show tabs
+o.showtabline = 0 -- hide built-in tabline
 o.sidescrolloff = 5 -- The minimal number of columns to scroll horizontally
 o.smartcase = true -- smart case
 o.smartindent = true -- make indenting smarter again
@@ -65,7 +63,7 @@ o.wildignore = ([[
 *.doc,*.pdf,*.cbr,*.cbz,
 *.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.kgb,
 *.swp,.lock,.DS_Store,._*,
-*/tmp/*,*.so,*.swp,*.zip,**/node_modules/**,**/target/**,**.terraform/**,
+*/tmp/*,*.so,*.swp,*.zip,**/node_modules/**,**/target/**,**/.terraform/**,
 ]]):gsub("\n", "")
 local function apply_bg_overrides()
   vim.cmd("highlight Normal guibg=#000000")
@@ -74,10 +72,3 @@ end
 vim.cmd("colorscheme github_dark")
 apply_bg_overrides()
 vim.api.nvim_create_autocmd("ColorScheme", { callback = apply_bg_overrides })
-vim.filetype.add({
-  extension = {
-    tf = "terraform",
-    tfvars = "terraform",
-    tofu = "terraform",
-  },
-})

@@ -110,8 +110,7 @@ return {
                 url = "https://www.schemastore.org/api/json/catalog.json",
               },
               format = { enabled = false },
-              -- enabling this conflicts between Kubernetes resources, kustomization.yaml, and Helmreleases
-              validate = false,
+              validate = true,
               schemas = {
                 kubernetes = "*.yaml",
                 ["http://json.schemastore.org/github-workflow"] = ".github/workflows/*",

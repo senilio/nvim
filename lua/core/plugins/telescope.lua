@@ -130,7 +130,7 @@ return {
       },
     })
 
-    telescope.load_extension("noice")
+    pcall(telescope.load_extension, "noice")
     -- telescope.load_extension("fzf")
     telescope.load_extension("zoxide")
     telescope.load_extension("heading")

@@ -27,23 +27,27 @@ return {
       },
       formatters_by_ft = {
         fish = { "fish_indent" },
-        go = { "goimports", "gofmt" },
+        go = {},
         javascript = { "prettier" },
         json = { "prettier" },
         lua = { "stylua" },
         markdown = { "prettier" },
         python = { "isort", "ruff_format" },
         sh = { "shfmt" },
+        opentofu = { "tofu_fmt" },
+        ["opentofu-vars"] = { "tofu_fmt" },
         terraform = { "tofu_fmt" },
+        ["terraform-vars"] = { "tofu_fmt" },
         tex = { "latexindent" },
         typst = { "typstfmt" },
         yaml = { "prettier" },
       },
-      format_after_save = function(bufnr)
+      format_on_save = function(bufnr)
         if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
           return
         end
-        return { lsp_format = "fallback" }
+        local lsp_format = vim.bo[bufnr].filetype == "go" and "prefer" or "fallback"
+        return { lsp_format = lsp_format }
       end,
     })
   end,
